@@ -10,7 +10,7 @@ const Layout = ({ children, data }) => (
       title={data.site.siteMetadata.title}
       meta={[
         { name: 'description', content: '' },
-        { name: 'keywords', content: '' },
+        { name: 'keywords', content: '' }
       ]}
     />
     {children()}
@@ -18,7 +18,7 @@ const Layout = ({ children, data }) => (
 )
 
 Layout.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func
 }
 
 export default Layout
