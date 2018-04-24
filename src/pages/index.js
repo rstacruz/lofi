@@ -52,8 +52,9 @@ export class MediaPlayer extends React.Component {
     if (!SC) return null
 
     return (
-      <div>
+      <div className="soundcloud-area">
         <button onClick={this.play}>Play</button>
+        <button onClick={this.next}>Next</button>
         {iframe}
       </div>
     )
@@ -98,6 +99,11 @@ export class MediaPlayer extends React.Component {
   play = () => {
     const { widget, SC } = this.getAPI()
     widget.play()
+  }
+
+  next = () => {
+    const { widget, SC } = this.getAPI()
+    widget.next()
   }
 }
 

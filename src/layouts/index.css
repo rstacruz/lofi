@@ -1,11 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+
+:root {
+  --grid-size: 5px;
+  --grid-bg: #113;
 }
 
 html {
-  background: url('/images/koi.gif') center center / cover no-repeat, #456;
+  border: solid 32px var(--grid-bg);
+  background:
+    linear-gradient(to right, transparent 2px, var(--grid-bg) 2px) left top / var(--grid-size) var(--grid-size),
+    linear-gradient(to bottom, transparent 1px, var(--grid-bg) 3px) left top / var(--grid-size) var(--grid-size),
+    url('/images/metro.gif') center center / cover no-repeat, #456;
 }
 
 body {
@@ -17,4 +31,15 @@ iframe {
 
 iframe:hover {
   opacity: 1;
+}
+
+.soundcloud-area {
+  max-width: 300px;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  color: white;
+  font-weight: bold;
 }
