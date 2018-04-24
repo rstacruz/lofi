@@ -29,9 +29,9 @@ export class MediaPlayer extends React.Component {
       show_playcount: false,
       show_teaser: true,
       show_user: false,
-      hide_related: false
+      hide_related: false,
+      start_track: Math.round(447 * Math.random())
       // visual: false,
-      // start_track: 0,
       // callback: true
     }
 
@@ -59,9 +59,10 @@ export class MediaPlayer extends React.Component {
     )
   }
 
-  async componentDidMount() {
-    const SC = await getSoundcloud()
-    this.setState({ SC })
+  componentDidMount() {
+    getSoundcloud().then(SC => {
+      this.setState({ SC })
+    })
   }
 
   refIframe = el => {
@@ -102,7 +103,6 @@ export class MediaPlayer extends React.Component {
 
 export const IndexPage = () => (
   <div>
-    <p>Hello world</p>
     <MediaPlayer />
   </div>
 )
