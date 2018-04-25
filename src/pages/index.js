@@ -20,12 +20,12 @@ export class MediaPlayer extends React.Component {
 
     const options = {
       url: 'https://api.soundcloud.com/playlists/246258956',
-      auto_play: true,
+      auto_play: false,
       buying: false,
       liking: false,
       download: false,
       sharing: false,
-      show_artwork: false,
+      show_artwork: true,
       show_comments: false,
       show_playcount: false,
       show_teaser: true,

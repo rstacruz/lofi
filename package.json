@@ -11,6 +11,7 @@
     "loadjs": "^3.5.4",
     "qs": "^6.5.1",
     "react-helmet": "^5.2.0",
+    "sanitize.css": "^5.0.0",
     "unstated": "^2.0.2"
   },
   "keywords": [],

@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 html,
 body {
   margin: 0;
@@ -38,7 +34,7 @@ body {
 }
 
 html {
-  border: solid 32px var(--grid-bg);
+  border: solid 6px var(--grid-bg);
   background:
     linear-gradient(135deg, transparent 1px, var(--grid-bg) 2px) left top / var(--grid-size) var(--grid-size),
     var(--background-image) center center / cover no-repeat, var(--grid-bg);
