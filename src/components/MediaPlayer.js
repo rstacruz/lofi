@@ -92,14 +92,14 @@ export class MediaPlayer extends React.Component {
     // Save widget to state
     this.setState({ widget })
 
-    this.bindWidgetEvents()
+    this.bindWidgetEvents(widget, dispatch, SC)
   }
 
   /**
    * Initializes the Soundcloud widget. Hooks Soundcloud events to `dispatch`.
    */
 
-  bindWidgetEvents = el => {
+  bindWidgetEvents = (widget, dispatch, SC) => {
     widget.bind(SC.Widget.Events.READY, () => {
       dispatch.setPlayerState('READY')
 
