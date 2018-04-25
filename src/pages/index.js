@@ -9,12 +9,27 @@ import MediaPlayer from '../components/MediaPlayer'
  */
 
 export const IndexPage = () => (
+  <div class="IndexPage">
+    <MediaControls />
+
+    <div className="soundcloud-area">
+      <MediaPlayer />
+    </div>
+  </div>
+)
+
+/**
+ * Media controls
+ */
+
+export const MediaControls = () => (
   <Subscribe to={[SoundcloudStore]}>
     {soundcloud => (
-      <div>
+      <div className="MediaControls">
         {soundcloud.state.state === 'PENDING' ? (
           <span style={{ color: '#888' }}>Loading...</span>
         ) : null}
+
         {soundcloud.state.state === 'READY' ||
         soundcloud.state.state === 'PAUSED' ? (
           <button
@@ -35,13 +50,13 @@ export const IndexPage = () => (
             Pause
           </button>
         ) : null}
-
-        <div className="soundcloud-area">
-          <MediaPlayer />
-        </div>
       </div>
     )}
   </Subscribe>
 )
+
+/*
+ * Export
+ */
 
 export default IndexPage
