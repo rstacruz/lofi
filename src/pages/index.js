@@ -10,8 +10,8 @@ import GifSlideshow from '../components/GifSlideshow'
  */
 
 export const IndexPage = () => (
-  <div className="IndexPage">
-    <div className="IndexLayout">
+  <div className="IndexPage" style={{ height: '100%' }}>
+    <div className="IndexLayout" style={{ height: '100%' }}>
       <div className="controls">
         <MediaControls />
       </div>
@@ -24,6 +24,44 @@ export const IndexPage = () => (
         <MediaPlayer />
       </div>
     </div>
+    <style jsx>{`
+      .IndexLayout {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      .controls {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        z-index: 1;
+      }
+
+      .soundcloud {
+        position: absolute;
+        max-width: 300px;
+        top: 16px;
+        right: 16px;
+        bottom: 16px;
+        opacity: 0;
+        z-index: 1;
+      }
+
+      .soundcloud:hover {
+        opacity: 1;
+      }
+    `}</style>
   </div>
 )
 
