@@ -17,7 +17,14 @@ export const IndexPage = () => (
       </div>
 
       <div className="slideshow">
-        <GifSlideshow />
+        <Subscribe to={[SoundcloudStore]}>
+          {soundcloud =>
+            soundcloud.state.state === 'PLAYING' ||
+            soundcloud.state.state === 'FINISHED' ? (
+              <GifSlideshow />
+            ) : null
+          }
+        </Subscribe>
       </div>
 
       <div className="soundcloud">
@@ -43,7 +50,7 @@ export const IndexPage = () => (
 
       .controls {
         position: absolute;
-        top: 16px;
+        bottom: 16px;
         left: 16px;
         z-index: 1;
       }

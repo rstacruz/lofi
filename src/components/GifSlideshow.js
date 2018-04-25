@@ -5,6 +5,7 @@ export default () => (
   <div className="GifSlideshow">
     <style jsx>{`
       .GifSlideshow {
+        animation: fade-in 1000ms linear 500ms;
         width: 100%;
         height: 100%;
         background: ${VARS.gridBg};
@@ -16,6 +17,16 @@ export default () => (
           url('${VARS.gridImage}') center center / cover no-repeat, ${
       VARS.gridBg
     };
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
       }
     `}</style>
   </div>
