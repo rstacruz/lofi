@@ -29,8 +29,8 @@ export class MediaPlayer extends React.Component {
       show_playcount: false,
       show_teaser: true,
       show_user: false,
-      hide_related: false,
-      start_track: Math.round(447 * Math.random())
+      hide_related: false
+      // start_track: Math.round(447 * Math.random())
       // visual: false,
       // callback: true
     }
@@ -53,7 +53,7 @@ export class MediaPlayer extends React.Component {
 
     return (
       <div className="soundcloud-area">
-        <button onClick={this.play}>&gt;</button>
+        {/* <button onClick={this.play}>&gt;</button> */}
         {/* <button onClick={this.next}>Next</button> */}
         {iframe}
       </div>
@@ -73,16 +73,18 @@ export class MediaPlayer extends React.Component {
 
     widget.bind(SC.Widget.Events.READY, () => {
       widget.getSounds(sounds => {
-        console.log('sounds', sounds)
-        widget.play()
+        // Skip to random track
+        const idx = Math.round(sounds.length * Math.random())
+        widget.skip(idx)
       })
+
       widget.bind(SC.Widget.Events.PLAY, () => {
         widget.getCurrentSound(csound => {
           // csound.permalink_url
           // csound.artwork_url
           // csound.description
           // csound.title
-          console.log('csoud', csound)
+          console.log('NP', csound.title)
         })
       })
     })
