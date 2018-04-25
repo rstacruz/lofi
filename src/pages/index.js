@@ -53,8 +53,17 @@ export class MediaPlayer extends React.Component {
 
     return (
       <div className="soundcloud-area">
-        <button onClick={this.play}>&gt;</button>
-        {/* <button onClick={this.next}>Next</button> */}
+        {store.state.state === 'PENDING' ? (
+          <span style={{ color: '#888' }}>Loading...</span>
+        ) : null}
+        {store.state.state === 'READY' || store.state.state === 'PAUSED' ? (
+          <button onClick={this.play}>Play</button>
+        ) : null}
+
+        {store.state.state === 'PLAYING' ? (
+          <button onClick={this.pause}>Pause</button>
+        ) : null}
+
         {iframe}
       </div>
     )
@@ -98,6 +107,10 @@ export class MediaPlayer extends React.Component {
         // Is this right?
         store.setPlayerState('PAUSED')
       })
+
+      widget.bind(SC.Widget.Events.PLAY_PROGRESS, evt => {
+        store.setPlayerState('PLAYING')
+      })
     })
   }
 
@@ -121,6 +134,11 @@ export class MediaPlayer extends React.Component {
     widget.play()
   }
 
+  pause = () => {
+    const { widget } = this.getAPI()
+    widget.pause()
+  }
+
   next = () => {
     const { widget } = this.getAPI()
     widget.next()
@@ -131,7 +149,6 @@ export const IndexPage = () => (
   <Subscribe to={[SoundcloudStore]}>
     {soundcloud => (
       <div>
-        <b style={{ color: '#888' }}>{soundcloud.state.state}</b>
         <MediaPlayer store={soundcloud} />
       </div>
     )}

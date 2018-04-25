@@ -14,6 +14,7 @@ export default class SoundcloudStore extends Container {
   }
 
   setPlayerState(state) {
+    if (this.state.state === state) return
     this.setState({ state })
   }
 
