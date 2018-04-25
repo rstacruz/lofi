@@ -10,19 +10,38 @@ body {
 }
 
 :root {
-  --grid-size: 5px;
-  --grid-bg: #113;
+  --grid-size: 4px;
+  --grid-bg: #112;
+  /* hummingbird */
+  --background-image: url('https://78.media.tumblr.com/05b132714f1e593386bb1fcff9f30310/tumblr_nlb8pdxJJs1tj45fzo1_400.gif');
+  /* window */
+  /* http://hellyeahcinemagraphs.tumblr.com/post/84737608290/wearethetay-jedavu-charming-illustrated */
+  --background-image: url('https://78.media.tumblr.com/adef45758340de69d64a21f91f09a154/tumblr_n3s8ioOljt1r51oypo7_500.gif');
+  /* bike */
+  /* https://juliendouvier.tumblr.com/post/163862485221#notes */
+  --background-image: url('https://78.media.tumblr.com/e9cc23ae98e67f6956880d4ca90a0052/tumblr_ou9eyoISBp1s85u2fo1_500.gif');
+  /* train */
+  /* https://juliendouvier.tumblr.com/post/160514365031#notes */
+  --background-image: url('https://78.media.tumblr.com/fda8bfa3905d45603d90d72adb3086df/tumblr_opqowiAmXO1s85u2fo1_500.gif');
+  /* lake */
+  /* https://juliendouvier.tumblr.com/post/101372057946#notes */
+  --background-image: url('https://78.media.tumblr.com/b74e2e5f995eba9bfa1a7c862bf5629b/tumblr_nea4onxsgk1s85u2fo1_500.gif');
+  /* girl */
+  /* https://juliendouvier.tumblr.com/post/96966597216#notes */
+  --background-image: url('https://78.media.tumblr.com/7ceeb87d2bc21163ed0343bdccdcbba9/tumblr_nbkzb4DvfK1s85u2fo1_500.gif');
+  /* vu meter */
+  /* https://juliendouvier.tumblr.com/post/92522918506#notes */
+  --background-image: url('https://78.media.tumblr.com/c83b5721adeaeaa74fce184fa51f8526/tumblr_n940167n2Y1s85u2fo1_r1_500.gif');
+  /* escalator */
+  /* https://juliendouvier.tumblr.com/post/97213975641/my-escalator-series-is-officially-featured-on#notes */
+  --background-image: url('https://78.media.tumblr.com/89ce4c298ad5d014ec7b1ea83dabec8c/tumblr_mwf80y6rGe1s85u2fo1_500.gif');
 }
 
 html {
   border: solid 32px var(--grid-bg);
   background:
-    linear-gradient(to right, transparent 2px, var(--grid-bg) 2px) left top / var(--grid-size) var(--grid-size),
-    linear-gradient(to bottom, transparent 1px, var(--grid-bg) 3px) left top / var(--grid-size) var(--grid-size),
-    url('/images/metro.gif') center center / cover no-repeat, #456;
-}
-
-body {
+    linear-gradient(135deg, transparent 1px, var(--grid-bg) 2px) left top / var(--grid-size) var(--grid-size),
+    var(--background-image) center center / cover no-repeat, var(--grid-bg);
 }
 
 iframe {
@@ -35,11 +54,14 @@ iframe:hover {
 
 .soundcloud-area {
   max-width: 300px;
+  text-align: right;
+  float: right;
 }
 
 button {
   background: transparent;
   border: 0;
   color: white;
-  font-weight: bold;
+  font-weight: normal;
+  padding: 8px;
 }

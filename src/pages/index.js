@@ -53,8 +53,8 @@ export class MediaPlayer extends React.Component {
 
     return (
       <div className="soundcloud-area">
-        <button onClick={this.play}>Play</button>
-        <button onClick={this.next}>Next</button>
+        <button onClick={this.play}>&gt;</button>
+        {/* <button onClick={this.next}>Next</button> */}
         {iframe}
       </div>
     )
