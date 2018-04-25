@@ -13,9 +13,8 @@ import SoundcloudStore from '../stores/SoundcloudStore'
 export class MediaPlayer extends React.Component {
   state = {}
 
-  render() {
+  render () {
     const { SC } = this.state
-    const { dispatch } = this.props
 
     const options = {
       url: 'https://api.soundcloud.com/playlists/246258956',
@@ -39,11 +38,11 @@ export class MediaPlayer extends React.Component {
     const iframe = (
       <iframe
         ref={this.refIframe}
-        allow="autoplay"
-        width="100%"
-        height="465"
-        scrolling="no"
-        frameBorder="no"
+        allow='autoplay'
+        width='100%'
+        height='465'
+        scrolling='no'
+        frameBorder='no'
         src={url}
       />
     )
@@ -52,7 +51,7 @@ export class MediaPlayer extends React.Component {
     return iframe
   }
 
-  componentDidMount() {
+  componentDidMount () {
     getSoundcloud().then(SC => {
       this.setState({ SC })
     })
@@ -62,7 +61,8 @@ export class MediaPlayer extends React.Component {
    * Passes down `actions` from the store to the SoundCloud widget API.
    */
 
-  UNSAFE_componentWillReceiveProps(next) {
+  /* eslint-disable camelcase */
+  UNSAFE_componentWillReceiveProps (next) {
     const prev = this.props
 
     const actions = next.actions

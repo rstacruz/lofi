@@ -9,7 +9,7 @@ import SoundcloudStore from '../stores/SoundcloudStore'
 export const MediaControls = () => (
   <Subscribe to={[SoundcloudStore]}>
     {soundcloud => (
-      <div className="MediaControls">
+      <div className='MediaControls'>
         {soundcloud.state.state === 'PENDING' ? (
           <span style={{ color: '#888' }}>Loading...</span>
         ) : null}
@@ -17,13 +17,13 @@ export const MediaControls = () => (
         {soundcloud.state.state === 'READY' ||
         soundcloud.state.state === 'PAUSED' ? (
           <button
-            onClick={() => {
-              soundcloud.play()
-            }}
-          >
+              onClick={() => {
+                soundcloud.play()
+              }}
+            >
             Play
-          </button>
-        ) : null}
+            </button>
+          ) : null}
 
         {soundcloud.state.state === 'PLAYING' ? (
           <button

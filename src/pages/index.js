@@ -10,24 +10,24 @@ import MediaControls from '../components/MediaControls'
  */
 
 export const IndexPage = () => (
-  <div className="IndexPage" style={{ height: '100%' }}>
-    <div className="IndexLayout" style={{ height: '100%' }}>
-      <div className="controls">
+  <div className='IndexPage' style={{ height: '100%' }}>
+    <div className='IndexLayout' style={{ height: '100%' }}>
+      <div className='controls'>
         <MediaControls />
       </div>
 
-      <div className="slideshow">
+      <div className='slideshow'>
         <Subscribe to={[SoundcloudStore]}>
           {soundcloud =>
             soundcloud.state.state === 'PLAYING' ||
             soundcloud.state.state === 'FINISHED' ? (
               <GifSlideshow />
-            ) : null
+              ) : null
           }
         </Subscribe>
       </div>
 
-      <div className="soundcloud">
+      <div className='soundcloud'>
         <MediaPlayer />
       </div>
     </div>

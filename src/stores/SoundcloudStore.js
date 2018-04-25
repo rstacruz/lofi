@@ -15,17 +15,17 @@ export default class SoundcloudStore extends Container {
     actions: []
   }
 
-  setPlayerState(state) {
+  setPlayerState (state) {
     console.log('setPlayerState()', state)
     if (this.state.state === state) return
     this.setState({ state })
   }
 
-  setSounds(sounds) {
+  setSounds (sounds) {
     this.setState({ sounds })
   }
 
-  setSound(sound) {
+  setSound (sound) {
     console.log(
       'setSound()',
       sound.user && sound.user.username,
@@ -39,15 +39,15 @@ export default class SoundcloudStore extends Container {
     // csound.title
   }
 
-  play() {
+  play () {
     this.setState({ actions: [{ type: 'PLAY' }] })
   }
 
-  pause() {
+  pause () {
     this.setState({ actions: [{ type: 'PAUSE' }] })
   }
 
-  next() {
+  next () {
     this.setState({ actions: [{ type: 'NEXT' }] })
   }
 }
