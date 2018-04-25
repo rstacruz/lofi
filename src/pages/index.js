@@ -3,17 +3,26 @@ import Link from 'gatsby-link'
 import { Subscribe } from 'unstated'
 import SoundcloudStore from '../stores/SoundcloudStore'
 import MediaPlayer from '../components/MediaPlayer'
+import GifSlideshow from '../components/GifSlideshow'
 
 /**
  * Home page
  */
 
 export const IndexPage = () => (
-  <div class="IndexPage">
-    <MediaControls />
+  <div className="IndexPage">
+    <div className="IndexLayout">
+      <div className="controls">
+        <MediaControls />
+      </div>
 
-    <div className="soundcloud-area">
-      <MediaPlayer />
+      <div className="slideshow">
+        <GifSlideshow />
+      </div>
+
+      <div className="soundcloud">
+        <MediaPlayer />
+      </div>
     </div>
   </div>
 )
