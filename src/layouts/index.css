@@ -69,15 +69,6 @@ html {
   }
 }
 
-.GifSlideshow {
-  width: 100%;
-  height: 100%;
-  border: solid 6px var(--grid-bg);
-  background:
-    linear-gradient(135deg, transparent 1px, var(--grid-bg) 2px) left top / var(--grid-size) var(--grid-size),
-    var(--background-image) center center / cover no-repeat, var(--grid-bg);
-}
-
 button {
   background: transparent;
   border: 0;
