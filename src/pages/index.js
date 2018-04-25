@@ -22,7 +22,7 @@ export const IndexPage = () => (
             soundcloud.state.state === 'PLAYING' ||
             soundcloud.state.state === 'FINISHED' ? (
               <GifSlideshow />
-              ) : null
+            ) : null
           }
         </Subscribe>
       </div>

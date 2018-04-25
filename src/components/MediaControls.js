@@ -17,13 +17,13 @@ export const MediaControls = () => (
         {soundcloud.state.state === 'READY' ||
         soundcloud.state.state === 'PAUSED' ? (
           <button
-              onClick={() => {
-                soundcloud.play()
-              }}
-            >
+            onClick={() => {
+              soundcloud.play()
+            }}
+          >
             Play
-            </button>
-          ) : null}
+          </button>
+        ) : null}
 
         {soundcloud.state.state === 'PLAYING' ? (
           <button
