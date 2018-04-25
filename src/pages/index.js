@@ -50,23 +50,7 @@ export class MediaPlayer extends React.Component {
     )
 
     if (!SC) return null
-
-    return (
-      <div className="soundcloud-area">
-        {store.state.state === 'PENDING' ? (
-          <span style={{ color: '#888' }}>Loading...</span>
-        ) : null}
-        {store.state.state === 'READY' || store.state.state === 'PAUSED' ? (
-          <button onClick={this.play}>Play</button>
-        ) : null}
-
-        {store.state.state === 'PLAYING' ? (
-          <button onClick={this.pause}>Pause</button>
-        ) : null}
-
-        {iframe}
-      </div>
-    )
+    return iframe
   }
 
   componentDidMount() {
@@ -75,11 +59,39 @@ export class MediaPlayer extends React.Component {
     })
   }
 
+  /**
+   * Passes down `actions` from the store to the SoundCloud widget API.
+   */
+
+  UNSAFE_componentWillReceiveProps(next) {
+    const prev = this.props
+
+    const actions = next.actions
+    const prevActions = prev.actions
+
+    if (actions !== prevActions && actions.length) {
+      actions.map(action => {
+        if (action.type === 'PLAY') {
+          this.state.widget.play()
+        } else if (action.type === 'PAUSE') {
+          this.state.widget.pause()
+        }
+      })
+    }
+  }
+
+  /**
+   * Initializes the `<iframe />`.
+   */
+
   refIframe = el => {
     this.iframe = el
 
     const { widget, SC } = this.getAPI()
     const { store } = this.props
+
+    // Save widget to state
+    this.setState({ widget })
 
     widget.bind(SC.Widget.Events.READY, () => {
       store.setPlayerState('READY')
@@ -124,28 +136,39 @@ export class MediaPlayer extends React.Component {
     const widget = SC.Widget(iframe)
     return { widget, SC }
   }
-
-  play = () => {
-    const { widget } = this.getAPI()
-    widget.play()
-  }
-
-  pause = () => {
-    const { widget } = this.getAPI()
-    widget.pause()
-  }
-
-  next = () => {
-    const { widget } = this.getAPI()
-    widget.next()
-  }
 }
 
 export const IndexPage = () => (
   <Subscribe to={[SoundcloudStore]}>
     {soundcloud => (
       <div>
-        <MediaPlayer store={soundcloud} />
+        {soundcloud.state.state === 'PENDING' ? (
+          <span style={{ color: '#888' }}>Loading...</span>
+        ) : null}
+        {soundcloud.state.state === 'READY' ||
+        soundcloud.state.state === 'PAUSED' ? (
+          <button
+            onClick={() => {
+              soundcloud.play()
+            }}
+          >
+            Play
+          </button>
+        ) : null}
+
+        {soundcloud.state.state === 'PLAYING' ? (
+          <button
+            onClick={() => {
+              soundcloud.pause()
+            }}
+          >
+            Pause
+          </button>
+        ) : null}
+
+        <div className="soundcloud-area">
+          <MediaPlayer store={soundcloud} actions={soundcloud.state.actions} />
+        </div>
       </div>
     )}
   </Subscribe>

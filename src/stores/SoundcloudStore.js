@@ -10,7 +10,9 @@ export default class SoundcloudStore extends Container {
     // The playlist
     sounds: null,
     // The current song
-    sound: null
+    sound: null,
+    // Actions to be passed onto SoundCloud
+    actions: []
   }
 
   setPlayerState(state) {
@@ -35,5 +37,17 @@ export default class SoundcloudStore extends Container {
     // csound.artwork_url
     // csound.description
     // csound.title
+  }
+
+  play() {
+    this.setState({ actions: [{ type: 'PLAY' }] })
+  }
+
+  pause() {
+    this.setState({ actions: [{ type: 'PAUSE' }] })
+  }
+
+  next() {
+    this.setState({ actions: [{ type: 'NEXT' }] })
   }
 }
