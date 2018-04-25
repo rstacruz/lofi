@@ -105,11 +105,7 @@ export class MediaPlayer extends React.Component {
 
       widget.bind(SC.Widget.Events.FINISH, () => {
         // Is this right?
-        store.setPlayerState('PAUSED')
-      })
-
-      widget.bind(SC.Widget.Events.PLAY_PROGRESS, evt => {
-        store.setPlayerState('PLAYING')
+        store.setPlayerState('FINISH')
       })
     })
   }

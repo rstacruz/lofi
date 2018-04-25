@@ -14,6 +14,7 @@ export default class SoundcloudStore extends Container {
   }
 
   setPlayerState(state) {
+    console.log('setPlayerState()', state)
     if (this.state.state === state) return
     this.setState({ state })
   }
@@ -23,11 +24,16 @@ export default class SoundcloudStore extends Container {
   }
 
   setSound(sound) {
+    console.log(
+      'setSound()',
+      sound.user && sound.user.username,
+      '-',
+      sound.title
+    )
     this.setState({ sound })
     // csound.permalink_url
     // csound.artwork_url
     // csound.description
     // csound.title
-    console.log('NP:', sound.user && sound.user.username, '-', sound.title)
   }
 }
