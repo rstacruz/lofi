@@ -53,7 +53,7 @@ export class MediaPlayer extends React.Component {
 
     return (
       <div className="soundcloud-area">
-        {/* <button onClick={this.play}>&gt;</button> */}
+        <button onClick={this.play}>&gt;</button>
         {/* <button onClick={this.next}>Next</button> */}
         {iframe}
       </div>
@@ -79,16 +79,26 @@ export class MediaPlayer extends React.Component {
       })
 
       widget.bind(SC.Widget.Events.PLAY, () => {
-        widget.getCurrentSound(csound => {
+        widget.getCurrentSound(sound => {
           // csound.permalink_url
           // csound.artwork_url
           // csound.description
           // csound.title
-          console.log('NP', csound.title)
+          console.log(
+            'NP:',
+            sound.user && sound.user.username,
+            '-',
+            sound.title
+          )
+          console.log(sound)
         })
       })
     })
   }
+
+  /**
+   * Returns the `widget` and `SC` objects.
+   */
 
   getAPI = () => {
     const { iframe } = this
@@ -102,12 +112,12 @@ export class MediaPlayer extends React.Component {
   }
 
   play = () => {
-    const { widget, SC } = this.getAPI()
+    const { widget } = this.getAPI()
     widget.play()
   }
 
   next = () => {
-    const { widget, SC } = this.getAPI()
+    const { widget } = this.getAPI()
     widget.next()
   }
 }
