@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Lofi',
+    title: 'Lofi'
   },
-  plugins: ['gatsby-plugin-react-helmet'],
+  plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-react-next']
 }

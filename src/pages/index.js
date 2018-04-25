@@ -72,6 +72,10 @@ export class MediaPlayer extends React.Component {
     const { widget, SC } = this.getAPI()
 
     widget.bind(SC.Widget.Events.READY, () => {
+      widget.getSounds(sounds => {
+        console.log('sounds', sounds)
+        widget.play()
+      })
       widget.bind(SC.Widget.Events.PLAY, () => {
         widget.getCurrentSound(csound => {
           // csound.permalink_url
@@ -81,7 +85,6 @@ export class MediaPlayer extends React.Component {
           console.log('csoud', csound)
         })
       })
-      widget.play()
     })
   }
 
