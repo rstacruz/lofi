@@ -2,9 +2,13 @@ import React from 'react'
 import Link from 'gatsby-link'
 import qs from 'qs'
 import getSoundcloud from '../../lib/soundcloud'
+import { Subscribe } from 'unstated'
+import SoundcloudStore from '../stores/SoundcloudStore'
 
 /**
  * Soundcloud player thing
+ *
+ * See: https://developers.soundcloud.com/docs/api/html5-widget
  */
 
 export class MediaPlayer extends React.Component {
@@ -12,10 +16,7 @@ export class MediaPlayer extends React.Component {
 
   render() {
     const { SC } = this.state
-
-    // <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-    // src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/246258956&color=%23ff5500&auto_play=true&
-    // hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    const { store } = this.props
 
     const options = {
       url: 'https://api.soundcloud.com/playlists/246258956',
@@ -30,7 +31,6 @@ export class MediaPlayer extends React.Component {
       show_teaser: true,
       show_user: false,
       hide_related: false
-      // start_track: Math.round(447 * Math.random())
       // visual: false,
       // callback: true
     }
@@ -70,28 +70,33 @@ export class MediaPlayer extends React.Component {
     this.iframe = el
 
     const { widget, SC } = this.getAPI()
+    const { store } = this.props
 
     widget.bind(SC.Widget.Events.READY, () => {
+      store.setPlayerState('READY')
+
       widget.getSounds(sounds => {
+        store.setSounds(sounds)
         // Skip to random track
         const idx = Math.round(sounds.length * Math.random())
         widget.skip(idx)
       })
 
       widget.bind(SC.Widget.Events.PLAY, () => {
+        store.setPlayerState('PLAYING')
+
         widget.getCurrentSound(sound => {
-          // csound.permalink_url
-          // csound.artwork_url
-          // csound.description
-          // csound.title
-          console.log(
-            'NP:',
-            sound.user && sound.user.username,
-            '-',
-            sound.title
-          )
-          console.log(sound)
+          store.setSound(sound)
         })
+      })
+
+      widget.bind(SC.Widget.Events.PAUSE, () => {
+        store.setPlayerState('PAUSED')
+      })
+
+      widget.bind(SC.Widget.Events.FINISH, () => {
+        // Is this right?
+        store.setPlayerState('PAUSED')
       })
     })
   }
@@ -123,9 +128,14 @@ export class MediaPlayer extends React.Component {
 }
 
 export const IndexPage = () => (
-  <div>
-    <MediaPlayer />
-  </div>
+  <Subscribe to={[SoundcloudStore]}>
+    {soundcloud => (
+      <div>
+        <b style={{ color: '#888' }}>{soundcloud.state.state}</b>
+        <MediaPlayer store={soundcloud} />
+      </div>
+    )}
+  </Subscribe>
 )
 
 export default IndexPage

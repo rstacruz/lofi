@@ -1964,6 +1964,10 @@ create-react-class@^15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+create-react-context@^0.1.5:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.1.6.tgz#0f425931d907741127acc6e31acb4f9015dd9fdc"
+
 cross-env@^3.1.1:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-3.2.4.tgz#9e0585f277864ed421ce756f81a980ff0d698aba"
@@ -7497,6 +7501,10 @@ through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
+tickedoff@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/tickedoff/-/tickedoff-1.0.2.tgz#7f56ece47c56162032a04ed4c2e0c10ac7c4003d"
+
 time-stamp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/time-stamp/-/time-stamp-2.0.0.tgz#95c6a44530e15ba8d6f4a3ecb8c3a3fac46da357"
@@ -7700,6 +7708,13 @@ unset-value@^1.0.0:
   dependencies:
     has-value "^0.3.1"
     isobject "^3.0.0"
+
+unstated@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/unstated/-/unstated-2.0.2.tgz#a2f65f2e3694e3a8a8d7c983d2c8d655cdf6acef"
+  dependencies:
+    create-react-context "^0.1.5"
+    tickedoff "^1.0.1"
 
 unzip-response@^2.0.1:
   version "2.0.1"
