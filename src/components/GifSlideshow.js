@@ -5,7 +5,7 @@ export default () => (
   <div className='GifSlideshow'>
     <style jsx>{`
       .GifSlideshow {
-        animation: fade-in 1000ms linear 500ms;
+        animation: fade-in 2000ms linear;
         width: 100%;
         height: 100%;
         background: ${VARS.gridBg};
@@ -20,11 +20,15 @@ export default () => (
       }
 
       @keyframes fade-in {
-        from {
+        0% {
           opacity: 0;
         }
 
-        to {
+        50% {
+          opacity: 0;
+        }
+
+        100% {
           opacity: 1;
         }
       }
