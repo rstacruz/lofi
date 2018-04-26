@@ -11,12 +11,13 @@ export default () => (
         background: ${VARS.gridBg};
         border: solid 6px ${VARS.gridBg};
         background:
-          linear-gradient(135deg, transparent 1px, ${
-            VARS.gridBg
-          } 2px) left top / ${VARS.gridSize} ${VARS.gridSize},
-          url('${VARS.gridImage}') center center / cover no-repeat, ${
-      VARS.gridBg
-    };
+          linear-gradient(
+            135deg,
+            transparent 2px,
+            ${VARS.gridBg} 2px
+          ) left top / ${VARS.gridSize} ${VARS.gridSize},
+          url('${VARS.gridImage}') center center / cover no-repeat,
+          ${VARS.gridBg};
       }
 
       @keyframes fade-in {
