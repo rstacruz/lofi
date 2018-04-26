@@ -1,59 +1,50 @@
 import React from 'react'
 import { Subscribe } from 'unstated'
+import cn from 'classnames'
+
 import SoundcloudStore from '../stores/SoundcloudStore'
 import UIStore from '../stores/UIStore'
 import MediaPlayer from '../components/MediaPlayer'
 import GifSlideshow from '../components/GifSlideshow'
 import MediaControls from '../components/MediaControls'
-import cn from 'classnames'
+import PlayerHotkeys from '../components/PlayerHotkeys'
 
 /**
  * Home page
  */
 
 export const IndexPage = () => (
-  <div className='IndexPage' style={{ height: '100%' }}>
-    <div className='IndexLayout' style={{ height: '100%' }}>
-      <div className='controls'>
-        <MediaControls />
+  <PlayerHotkeys>
+    <div className='IndexPage' style={{ height: '100%' }}>
+      <div className='IndexLayout' style={{ height: '100%' }}>
+        <div className='controls'>
+          <MediaControls />
+        </div>
+
+        <div className='slideshow'>
+          <Subscribe to={[SoundcloudStore]}>
+            {soundcloud =>
+              soundcloud.state.state === 'PLAYING' ||
+              soundcloud.state.state === 'FINISHED' ? (
+                <GifSlideshow />
+              ) : null
+            }
+          </Subscribe>
+        </div>
 
         <Subscribe to={[UIStore]}>
           {ui => (
-            <button
-              onClick={() => {
-                ui.toggleSoundcloud()
-              }}
+            <div
+              className={cn('soundcloud', {
+                '-visible': ui.state.showSoundcloud
+              })}
             >
-              Toggle
-            </button>
+              <MediaPlayer />
+            </div>
           )}
         </Subscribe>
       </div>
-
-      <div className='slideshow'>
-        <Subscribe to={[SoundcloudStore]}>
-          {soundcloud =>
-            soundcloud.state.state === 'PLAYING' ||
-            soundcloud.state.state === 'FINISHED' ? (
-              <GifSlideshow />
-            ) : null
-          }
-        </Subscribe>
-      </div>
-
-      <Subscribe to={[UIStore]}>
-        {ui => (
-          <div
-            className={cn('soundcloud', {
-              '-visible': ui.state.showSoundcloud
-            })}
-          >
-            <MediaPlayer />
-          </div>
-        )}
-      </Subscribe>
-    </div>
-    <style jsx>{`
+      <style jsx>{`
       .IndexLayout {
         position: absolute;
         top: 0;
@@ -95,7 +86,8 @@ export const IndexPage = () => (
         pointer-events: auto;
       }
     `}</style>
-  </div>
+    </div>
+  </PlayerHotkeys>
 )
 
 /*
