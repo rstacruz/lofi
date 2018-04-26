@@ -65,7 +65,7 @@ export const IndexPage = () => (
         position: absolute;
         bottom: 16px;
         left: 16px;
-        z-index: 1;
+        z-index: 5;
       }
 
       .soundcloud {
