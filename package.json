@@ -5,6 +5,7 @@
   "author": "Rico Sta. Cruz <rstacruz@users.noreply.github.com>",
   "dependencies": {
     "babel-eslint": "8",
+    "classnames": "^2.2.5",
     "eslint": "4",
     "eslint-config-standard": "11",
     "eslint-config-standard-react": "5",

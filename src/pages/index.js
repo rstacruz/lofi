@@ -1,9 +1,11 @@
 import React from 'react'
 import { Subscribe } from 'unstated'
 import SoundcloudStore from '../stores/SoundcloudStore'
+import UIStore from '../stores/UIStore'
 import MediaPlayer from '../components/MediaPlayer'
 import GifSlideshow from '../components/GifSlideshow'
 import MediaControls from '../components/MediaControls'
+import cn from 'classnames'
 
 /**
  * Home page
@@ -14,6 +16,18 @@ export const IndexPage = () => (
     <div className='IndexLayout' style={{ height: '100%' }}>
       <div className='controls'>
         <MediaControls />
+
+        <Subscribe to={[UIStore]}>
+          {ui => (
+            <button
+              onClick={() => {
+                ui.toggleSoundcloud()
+              }}
+            >
+              Toggle
+            </button>
+          )}
+        </Subscribe>
       </div>
 
       <div className='slideshow'>
@@ -27,9 +41,17 @@ export const IndexPage = () => (
         </Subscribe>
       </div>
 
-      <div className='soundcloud'>
-        <MediaPlayer />
-      </div>
+      <Subscribe to={[UIStore]}>
+        {ui => (
+          <div
+            className={cn('soundcloud', {
+              '-visible': ui.state.showSoundcloud
+            })}
+          >
+            <MediaPlayer />
+          </div>
+        )}
+      </Subscribe>
     </div>
     <style jsx>{`
       .IndexLayout {
@@ -62,11 +84,15 @@ export const IndexPage = () => (
         right: 16px;
         bottom: 16px;
         opacity: 0;
-        z-index: 1;
+        z-index: -1;
+        pointer-events: none;
+      }
       }
 
-      .soundcloud:hover {
+      .soundcloud.-visible {
         opacity: 1;
+        z-index: 1;
+        pointer-events: auto;
       }
     `}</style>
   </div>
