@@ -15,9 +15,10 @@ export class MediaPlayer extends React.Component {
 
   render () {
     const { SC } = this.state
+    const { url } = this.props
 
     const options = {
-      url: 'https://api.soundcloud.com/playlists/246258956',
+      url,
       auto_play: false,
       buying: false,
       liking: false,
@@ -33,7 +34,7 @@ export class MediaPlayer extends React.Component {
       // callback: true
     }
 
-    const url = `https://w.soundcloud.com/player/?${qs.stringify(options)}`
+    const src = `https://w.soundcloud.com/player/?${qs.stringify(options)}`
 
     const iframe = (
       <iframe
@@ -43,7 +44,7 @@ export class MediaPlayer extends React.Component {
         height='465'
         scrolling='no'
         frameBorder='no'
-        src={url}
+        src={src}
       />
     )
 
@@ -112,6 +113,7 @@ export class MediaPlayer extends React.Component {
       })
 
       widget.bind(SC.Widget.Events.PLAY, () => {
+        console.log('playing')
         dispatch.setPlayerState('PLAYING')
 
         widget.getCurrentSound(sound => {
@@ -153,7 +155,11 @@ export default () => {
   return (
     <Subscribe to={[SoundcloudStore]}>
       {soundcloud => (
-        <MediaPlayer dispatch={soundcloud} actions={soundcloud.state.actions} />
+        <MediaPlayer
+          url={'https://api.soundcloud.com/playlists/246258956'}
+          dispatch={soundcloud}
+          actions={soundcloud.state.actions}
+        />
       )}
     </Subscribe>
   )

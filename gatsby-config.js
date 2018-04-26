@@ -7,4 +7,5 @@ module.exports = {
     'gatsby-plugin-react-next',
     'gatsby-plugin-styled-jsx'
   ]
+  // pathPrefix: '/lofi'
 }
