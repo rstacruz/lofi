@@ -1,8 +1,22 @@
+/* @flow */
+
 import React from 'react'
 import qs from 'qs'
 import { Subscribe } from 'unstated'
 import getSoundcloud from '../../lib/soundcloud'
 import SoundcloudStore from '../stores/SoundcloudStore'
+
+/*::
+  export type Props = {
+    url: string
+  }
+
+  export type ViewProps = {
+    url: string,
+    dispatch: any,
+    actions: any
+  }
+*/
 
 /**
  * Soundcloud player iframe.
@@ -10,7 +24,7 @@ import SoundcloudStore from '../stores/SoundcloudStore'
  * See: https://developers.soundcloud.com/docs/api/html5-widget
  */
 
-export class MediaPlayer extends React.Component {
+export class MediaPlayerView extends React.Component /*:: <Props> */ {
   state = {}
 
   render () {
@@ -151,12 +165,12 @@ export class MediaPlayer extends React.Component {
  * Place this anywhere in your DOM tree. It listens to Soundcloud store.
  */
 
-export default () => {
+export const MediaPlayer = (url /*: Props */) => {
   return (
     <Subscribe to={[SoundcloudStore]}>
       {soundcloud => (
-        <MediaPlayer
-          url={'https://api.soundcloud.com/playlists/246258956'}
+        <MediaPlayerView
+          url={url || 'https://api.soundcloud.com/playlists/246258956'}
           dispatch={soundcloud}
           actions={soundcloud.state.actions}
         />
@@ -164,3 +178,9 @@ export default () => {
     </Subscribe>
   )
 }
+
+/*
+ * Export
+ */
+
+export default MediaPlayer

@@ -6,7 +6,7 @@ import cn from 'classnames'
 
 import SoundcloudStore from '../stores/SoundcloudStore'
 import UIStore from '../stores/UIStore'
-import MediaPlayer from '../components/MediaPlayer'
+import { MediaPlayerView } from '../components/MediaPlayer'
 import GifSlideshow from '../components/GifSlideshow'
 import MediaControls from '../components/MediaControls'
 import PlayerHotkeys from '../components/PlayerHotkeys'
@@ -14,7 +14,15 @@ import PlayerHotkeys from '../components/PlayerHotkeys'
 /*::
   export type ViewProps = {
     showSlideshow: boolean,
-    showSoundcloud: boolean
+    showSoundcloud: boolean,
+    soundcloudURL: string,
+    dispatch: any,
+    actions: any
+  }
+
+  export type Props = {
+    soundcloudURL: string,
+    title: string
   }
 */
 
@@ -23,7 +31,13 @@ import PlayerHotkeys from '../components/PlayerHotkeys'
  */
 
 export const PlayerPageView = (
-  { showSlideshow, showSoundcloud } /*: ViewProps */
+  {
+    showSlideshow,
+    showSoundcloud,
+    soundcloudURL,
+    dispatch,
+    actions
+  } /*: ViewProps */
 ) => (
   <PlayerHotkeys>
     <div className='PlayerPage' style={{ height: '100%' }}>
@@ -42,7 +56,11 @@ export const PlayerPageView = (
           '-visible': showSoundcloud
         })}
       >
-        <MediaPlayer />
+        <MediaPlayerView
+          url={soundcloudURL}
+          dispatch={dispatch}
+          actions={actions}
+        />
       </div>
     </div>
     <style jsx>{`
@@ -93,7 +111,7 @@ export const PlayerPageView = (
  * Connected `<PlayerPageView />`
  */
 
-export const PlayerPage = () => (
+export const PlayerPage = ({ soundcloudURL, title } /*: Props */) => (
   <Subscribe to={[SoundcloudStore, UIStore]}>
     {(soundcloud, ui) => (
       <PlayerPageView
@@ -102,6 +120,10 @@ export const PlayerPage = () => (
           soundcloud.state.state === 'FINISHED'
         }
         showSoundcloud={ui.state.showSoundcloud}
+        soundcloudURL={soundcloudURL}
+        title={title}
+        dispatch={soundcloud}
+        actions={soundcloud.state.actions}
       />
     )}
   </Subscribe>

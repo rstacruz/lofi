@@ -3,12 +3,12 @@ import PlayerPage from '../components/PlayerPage'
 
 /**
  * Home page
+ * See: https://soundcloud.com/jessinneijts/sets/timewriter-lazy-sundays
  */
 
 export const IndexPage = () => (
   <PlayerPage
-    title={'Lofi Beats'}
-    soundcloudURL={'https://api.soundcloud.com/playlists/246258956'}
+    soundcloudURL={'https://api.soundcloud.com/playlists/109759947'}
   />
 )
 
