@@ -6,37 +6,47 @@ import SoundcloudStore from '../stores/SoundcloudStore'
  * Media controls
  */
 
-export const MediaControls = () => (
+export const MediaControlsView = ({
+  onPlay,
+  onPause,
+  isPaused,
+  isPending,
+  isPlaying
+}) => (
+  <div className='MediaControls'>
+    {isPending ? <span>Loading...</span> : null}
+    {isPaused ? <button onClick={onPlay}>Play</button> : null}
+    {isPlaying ? <button onClick={onPause}>Pause</button> : null}
+  </div>
+)
+
+/**
+ * Connector
+ */
+
+export const connect = View => () => (
   <Subscribe to={[SoundcloudStore]}>
     {soundcloud => (
-      <div className='MediaControls'>
-        {soundcloud.state.state === 'PENDING' ? (
-          <span style={{ color: '#888' }}>Loading...</span>
-        ) : null}
-
-        {soundcloud.state.state === 'READY' ||
-        soundcloud.state.state === 'PAUSED' ? (
-          <button
-            onClick={() => {
-              soundcloud.play()
-            }}
-          >
-            Play
-          </button>
-        ) : null}
-
-        {soundcloud.state.state === 'PLAYING' ? (
-          <button
-            onClick={() => {
-              soundcloud.pause()
-            }}
-          >
-            Pause
-          </button>
-        ) : null}
-      </div>
+      <View
+        onPlay={() => {
+          soundcloud.play()
+        }}
+        onPause={() => {
+          soundcloud.pause()
+        }}
+        isPaused={
+          soundcloud.state.state === 'READY' ||
+          soundcloud.state.state === 'PAUSED'
+        }
+        isPending={soundcloud.state.state === 'PENDING'}
+        isPlaying={soundcloud.state.state === 'PLAYING'}
+      />
     )}
   </Subscribe>
 )
 
-export default MediaControls
+/*
+ * Export
+ */
+
+export default connect(MediaControlsView)
