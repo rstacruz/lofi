@@ -18,12 +18,13 @@ import PlayerHotkeys from '../components/PlayerHotkeys'
     showSoundcloud: boolean,
     soundcloudURL: string,
     dispatch: any,
-    actions: any
+    actions: any,
+    children: Array<React.Node>
   }
 
   export type Props = {
     soundcloudURL: string,
-    title: string
+    title?: string
   }
 */
 
@@ -37,10 +38,14 @@ export const PlayerPageView = (
     showSoundcloud,
     soundcloudURL,
     dispatch,
-    actions
+    actions,
+    children
   } /*: ViewProps */
 ) => (
   <PlayerHotkeys>
+    {/* Helmet */}
+    {children}
+
     <div className='PlayerPage' style={{ height: '100%' }}>
       <div className='controls'>
         <MediaControls />
@@ -124,7 +129,9 @@ export const PlayerPage = ({ soundcloudURL, title } /*: Props */) => (
         soundcloudURL={soundcloudURL}
         dispatch={soundcloud}
         actions={soundcloud.state.actions}
-      />
+      >
+        <Helmet title={title} />
+      </PlayerPageView>
     )}
   </Subscribe>
 )
