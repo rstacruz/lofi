@@ -2,7 +2,7 @@
 
 export const gridSize = '4px'
 
-export const gridBg = '#456'
+export const gridBg = '#345'
 
 export const images = [
   // Bike
@@ -37,4 +37,4 @@ export const images = [
   'https://78.media.tumblr.com/b74e2e5f995eba9bfa1a7c862bf5629b/tumblr_nea4onxsgk1s85u2fo1_500.gif'
 ]
 
-export const gridImage = images[7]
+export const gridImage = images[6]
