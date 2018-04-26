@@ -15,7 +15,7 @@ storiesOf('MediaControlsView', module)
         \`<MediaControls />\` hooks up to the \`SoundcloudStore\`, but the
         \`MediaControlsView\` is pure-ish.
       `
-    })(() => <MediaControlsViewExample />)
+    })(() => <Example>{props => <MediaControlsView {...props} />}</Example>)
   )
   .add(
     'States',
@@ -42,10 +42,10 @@ storiesOf('MediaControlsView', module)
   )
 
 /**
- * Example for `<MediaControlsView />`
+ * Example provider for `<MediaControlsView />`
  */
 
-class MediaControlsViewExample extends React.Component {
+class Example extends React.Component {
   state = {
     state: 'PAUSED'
   }
@@ -62,15 +62,14 @@ class MediaControlsViewExample extends React.Component {
 
   render () {
     const { state } = this.state
+    const { children } = this.props
 
-    return (
-      <MediaControlsView
-        isPlaying={state === 'PLAYING'}
-        isPaused={state === 'PAUSED'}
-        isPending={state === 'PENDING'}
-        onPause={this.onPause}
-        onPlay={this.onPlay}
-      />
-    )
+    return children({
+      isPlaying: state === 'PLAYING',
+      isPaused: state === 'PAUSED',
+      isPending: state === 'PENDING',
+      onPause: this.onPause,
+      onPlay: this.onPlay
+    })
   }
 }
