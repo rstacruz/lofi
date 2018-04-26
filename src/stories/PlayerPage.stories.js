@@ -1,7 +1,6 @@
 import React from 'react'
 import { Provider } from 'unstated'
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
 import { withInfo } from '@storybook/addon-info'
 
 import PlayerPage from '../components/PlayerPage'
