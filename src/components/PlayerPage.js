@@ -3,6 +3,7 @@
 import React from 'react'
 import { Subscribe } from 'unstated'
 import cn from 'classnames'
+import Helmet from 'react-helmet'
 
 import SoundcloudStore from '../stores/SoundcloudStore'
 import UIStore from '../stores/UIStore'
@@ -114,6 +115,8 @@ export const PlayerPageView = (
 export const PlayerPage = ({ soundcloudURL, title } /*: Props */) => (
   <Subscribe to={[SoundcloudStore, UIStore]}>
     {(soundcloud, ui) => (
+      <React.Fragment>
+      <Helmet title={title} />
       <PlayerPageView
         showSlideshow={
           soundcloud.state.state === 'PLAYING' ||
@@ -121,10 +124,10 @@ export const PlayerPage = ({ soundcloudURL, title } /*: Props */) => (
         }
         showSoundcloud={ui.state.showSoundcloud}
         soundcloudURL={soundcloudURL}
-        title={title}
         dispatch={soundcloud}
         actions={soundcloud.state.actions}
       />
+      </React.Fragment>
     )}
   </Subscribe>
 )

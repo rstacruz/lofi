@@ -49,8 +49,7 @@ export const MediaControlsView = ({
         height: 16px;
         border-radius: 12px;
         background-color: ${BACKGROUND_COLOR};
-        box-shadow: inset 0 0 0 1px ${INACTIVE_COLOR},
-          0 0 0 1px ${INACTIVE_COLOR};
+        box-shadow: 0 0 0 2px ${INACTIVE_COLOR};
         position: relative;
         display: inline-block;
         transition: background-color 300ms ease-out, border-color 300ms ease-out,
@@ -83,7 +82,7 @@ export const MediaControlsView = ({
       .button.-pause {
         background: ${ACTIVE_COLOR};
         border-color: ${BACKGROUND_COLOR};
-        box-shadow: inset 0 0 0 0 transparent, 0 0 0 0 transparent;
+        box-shadow: 0 0 0 0 transparent;
       }
 
       .button.-pause::before {

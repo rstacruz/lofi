@@ -8,6 +8,7 @@ import PlayerPage from '../components/PlayerPage'
 
 export const IndexPage = () => (
   <PlayerPage
+    title={'Lazy Sunday'}
     soundcloudURL={'https://api.soundcloud.com/playlists/109759947'}
   />
 )

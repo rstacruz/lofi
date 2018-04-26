@@ -21,7 +21,7 @@ export const images = [
   'https://78.media.tumblr.com/fda8bfa3905d45603d90d72adb3086df/tumblr_opqowiAmXO1s85u2fo1_500.gif',
 
   // Escalator
-  // https://juliendouvier.tumblr.com/post/97213975641/my-escalator-series-is-officially-featured-on#notes
+  // https://julie11.tumblr.com/post/97213975641/my-escalator-series-is-officially-featured-on#notes
   'https://78.media.tumblr.com/89ce4c298ad5d014ec7b1ea83dabec8c/tumblr_mwf80y6rGe1s85u2fo1_500.gif',
 
   // VU meter
