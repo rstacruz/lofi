@@ -44,7 +44,7 @@
   "devDependencies": {
     "@storybook/addon-info": "^3.4.2",
     "@storybook/react": "^3.4.2",
-    "babel-loader": "7.1.4",
+    "babel-loader": "7.1.1",
     "gh-pages": "^1.1.0",
     "prettier": "^1.12.0",
     "prettier-eslint-cli": "^4.7.1"
