@@ -9,39 +9,39 @@ import GifSlideshow from '../components/GifSlideshow'
 import MediaControls from '../components/MediaControls'
 import PlayerHotkeys from '../components/PlayerHotkeys'
 
+/*::
+  export type ViewProps = {
+    showSlideshow: boolean,
+    showSoundcloud: boolean
+  }
+*/
+
 /**
  * Home page
  */
 
-export const PlayerPage = () => (
+export const PlayerPageView = (
+  { showSlideshow, showSoundcloud } /*: ViewProps */
+) => (
   <PlayerHotkeys>
     <div className='PlayerPage' style={{ height: '100%' }}>
       <div className='controls'>
         <MediaControls />
       </div>
 
-      <div className='slideshow'>
-        <Subscribe to={[SoundcloudStore]}>
-          {soundcloud =>
-            soundcloud.state.state === 'PLAYING' ||
-            soundcloud.state.state === 'FINISHED' ? (
-              <GifSlideshow />
-            ) : null
-          }
-        </Subscribe>
-      </div>
+      {showSlideshow ? (
+        <div className='slideshow'>
+          <GifSlideshow />
+        </div>
+      ) : null}
 
-      <Subscribe to={[UIStore]}>
-        {ui => (
-          <div
-            className={cn('soundcloud', {
-              '-visible': ui.state.showSoundcloud
-            })}
-          >
-            <MediaPlayer />
-          </div>
-        )}
-      </Subscribe>
+      <div
+        className={cn('soundcloud', {
+          '-visible': showSoundcloud
+        })}
+      >
+        <MediaPlayer />
+      </div>
     </div>
     <style jsx>{`
       .PlayerPage {
@@ -62,8 +62,8 @@ export const PlayerPage = () => (
 
       .controls {
         position: absolute;
-        bottom: 16px;
-        left: 16px;
+        bottom: 32px;
+        left: 32px;
         z-index: 5;
       }
 
@@ -85,6 +85,24 @@ export const PlayerPage = () => (
       }
     `}</style>
   </PlayerHotkeys>
+)
+
+/**
+ * Connected `<PlayerPageView />`
+ */
+
+export const PlayerPage = () => (
+  <Subscribe to={[SoundcloudStore, UIStore]}>
+    {(soundcloud, ui) => (
+      <PlayerPageView
+        showSlideshow={
+          soundcloud.state.state === 'PLAYING' ||
+          soundcloud.state.state === 'FINISHED'
+        }
+        showSoundcloud={ui.state.showSoundcloud}
+      />
+    )}
+  </Subscribe>
 )
 
 /*
