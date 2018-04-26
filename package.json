@@ -37,9 +37,11 @@
     "format": "prettier-eslint --write 'src/**/*.js' 'lib/**/*.js'",
     "format:list": "prettier-eslint --list-different 'src/**/*.js' 'lib/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9001 c .storybook",
     "deploy": "rm -rf .cache public && gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
+    "@storybook/react": "^3.4.2",
     "gh-pages": "^1.1.0",
     "prettier": "^1.12.0",
     "prettier-eslint-cli": "^4.7.1"
