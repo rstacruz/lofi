@@ -1,6 +1,6 @@
 import React from 'react'
 import * as VARS from '../styles/variables'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 export const GifSlideshow = () => (
   <div className='GifSlideshow'>
@@ -64,8 +64,8 @@ export const GifSlideshow = () => (
   </div>
 )
 
-GifSlideshow.propTypes = {
-  image: PropTypes.string
-}
+// GifSlideshow.propTypes = {
+//   image: PropTypes.string
+// }
 
 export default GifSlideshow
