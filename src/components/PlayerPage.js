@@ -88,8 +88,8 @@ export const PlayerPageView = (
 
       .controls {
         position: absolute;
-        bottom: 32px;
-        left: 32px;
+        right: 32px;
+        top: 32px;
         z-index: 5;
       }
 

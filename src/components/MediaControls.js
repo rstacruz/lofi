@@ -2,6 +2,7 @@ import React from 'react'
 import { Subscribe } from 'unstated'
 import SoundcloudStore from '../stores/SoundcloudStore'
 import cn from 'classnames'
+import color from 'color'
 
 export const INACTIVE_COLOR = '#fff'
 export const ACTIVE_COLOR = '#8fa'
@@ -24,7 +25,9 @@ export const MediaControlsView = ({
       <button
         className={cn('button', { '-play': isPaused, '-pause': isPlaying })}
         onClick={isPaused ? onPlay : onPause}
-      />
+      >
+        <span className='peg' />
+      </button>
     ) : null}
 
     <style jsx>{`
@@ -40,7 +43,7 @@ export const MediaControlsView = ({
       }
 
       .button,
-      .button::before {
+      .peg {
         box-sizing: border-box;
       }
 
@@ -65,29 +68,52 @@ export const MediaControlsView = ({
       }
 
       /* Peg */
-      .button::before {
+      .peg {
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        transition: background-color 300ms ease-out, transform 300ms ease-out;
+        box-sizing: border-box;
+      }
+
+      .peg::before {
         content: '';
         display: block;
         width: 10px;
         height: 10px;
         background-color: ${INACTIVE_COLOR};
-        position: absolute;
-        left: 3px;
-        top: 3px;
         border-radius: 50%;
-        transition: background-color 300ms ease-out, transform 300ms ease-out;
-        box-sizing: border-box;
       }
 
+      /* (On) container */
       .button.-pause {
-        background: ${ACTIVE_COLOR};
-        border-color: ${BACKGROUND_COLOR};
+        background: ${color(ACTIVE_COLOR).fade(0.9)};
         box-shadow: 0 0 0 0 transparent;
       }
 
-      .button.-pause::before {
+      /* (On) peg */
+      .button.-pause .peg {
         transform: translate3d(12px, 0, 0);
-        background: ${BACKGROUND_COLOR};
+      }
+
+      .button.-pause .peg::before {
+        background: ${ACTIVE_COLOR};
+        box-shadow: 0 0 4px 2px ${ACTIVE_COLOR};
+        animation: pulse 1200ms linear infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(0.5);
+        }
+
+        100% {
+          transform: scale(1);
+        }
       }
     `}</style>
   </div>
