@@ -1,3 +1,5 @@
+/* @flow */
+
 import React from 'react'
 import { Subscribe } from 'unstated'
 import cn from 'classnames'
