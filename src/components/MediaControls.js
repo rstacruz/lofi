@@ -55,8 +55,7 @@ export const MediaControlsView = ({
         box-shadow: 0 0 0 2px ${INACTIVE_COLOR};
         position: relative;
         display: inline-block;
-        transition: background-color 300ms ease-out, border-color 300ms ease-out,
-          box-shadow 300ms ease-out;
+        transition: background-color 300ms ease-out, box-shadow 300ms ease-out;
         cursor: pointer;
         box-sizing: border-box;
       }
@@ -72,7 +71,7 @@ export const MediaControlsView = ({
         position: absolute;
         left: 3px;
         top: 3px;
-        transition: background-color 300ms ease-out, transform 300ms ease-out;
+        transition: transform 300ms ease-out;
         box-sizing: border-box;
       }
 
@@ -83,12 +82,13 @@ export const MediaControlsView = ({
         height: 10px;
         background-color: ${INACTIVE_COLOR};
         border-radius: 50%;
+        transition: background-color 1200ms ease-out, box-shadow 1200ms ease-out;
       }
 
       /* (On) container */
       .button.-pause {
-        background: ${color(ACTIVE_COLOR).fade(0.9)};
-        box-shadow: 0 0 0 0 transparent;
+        background: ${BACKGROUND_COLOR};
+        box-shadow: 0 0 1px 1px ${color(ACTIVE_COLOR).fade(0.9)};
       }
 
       /* (On) peg */
@@ -98,8 +98,8 @@ export const MediaControlsView = ({
 
       .button.-pause .peg::before {
         background: ${ACTIVE_COLOR};
-        box-shadow: 0 0 4px 2px ${ACTIVE_COLOR};
-        animation: pulse 1200ms linear infinite;
+        box-shadow: 0 0 16px 2px ${ACTIVE_COLOR};
+        animation: pulse 1200ms ease-out infinite alternate-reverse;
       }
 
       @keyframes pulse {
@@ -107,12 +107,8 @@ export const MediaControlsView = ({
           transform: scale(1);
         }
 
-        50% {
-          transform: scale(0.5);
-        }
-
         100% {
-          transform: scale(1);
+          transform: scale(0.5);
         }
       }
     `}</style>
