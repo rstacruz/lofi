@@ -82,7 +82,7 @@ export const IndexPage = () => (
 
       .soundcloud.-visible {
         opacity: 1;
-        z-index: 1;
+        z-index: 5;
         pointer-events: auto;
       }
     `}</style>
