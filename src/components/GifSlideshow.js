@@ -1,13 +1,23 @@
 import React from 'react'
 import * as VARS from '../styles/variables'
+import PropTypes from 'prop-types'
 
-export default () => (
+export const GifSlideshow = () => (
   <div className='GifSlideshow'>
+    {/* Looping image */}
+    <span
+      className='loop'
+      style={{
+        backgroundImage: `url('${VARS.gridImage}')`
+      }}
+    />
+
+    {/* Grid overlay */}
     <span className='grid' />
-    <span className='loop' />
+
     <style jsx>{`
       .GifSlideshow {
-        position: relative
+        position: relative;
         animation: fade-in 2000ms linear;
         width: 100%;
         height: 100%;
@@ -25,19 +35,16 @@ export default () => (
 
       .grid {
         z-index: 2;
-        background:
-          linear-gradient(
-            135deg,
-            transparent 2px,
-            ${VARS.gridBg} 2px
-          ) left top / ${VARS.gridSize} ${VARS.gridSize};
+        background: linear-gradient(135deg, transparent 1px, ${VARS.gridBg} 1px)
+          left top / ${VARS.gridSize} ${VARS.gridSize};
       }
 
       .loop {
         z-index: 1;
-        background:
-          ${VARS.gridBg}
-          url('${VARS.gridImage}') center center / cover no-repeat;
+        background-color: ${VARS.gridBg};
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
       }
 
       @keyframes fade-in {
@@ -56,3 +63,9 @@ export default () => (
     `}</style>
   </div>
 )
+
+GifSlideshow.propTypes = {
+  image: PropTypes.string
+}
+
+export default GifSlideshow

@@ -2,7 +2,7 @@
 
 export const gridSize = '4px'
 
-export const gridBg = '#345'
+export const gridBg = '#113'
 
 export const images = [
   // Bike

@@ -1,39 +1,45 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import { withInfo } from '@storybook/addon-info'
 
-import '../layouts/css'
 import { MediaControlsView } from '../components/MediaControls'
 
-storiesOf('MediaControls', module)
-  .add('Full example', () => (
-    <div>
-      <MediaControlsViewExample />
-    </div>
-  ))
-  .add('isPlaying', () => (
-    <div>
-      <MediaControlsView
-        isPlaying
-        onPlay={action('onPlay')}
-        onPause={action('onPause')}
-      />
-    </div>
-  ))
-  .add('isPaused', () => (
-    <div>
-      <MediaControlsView
-        isPaused
-        onPlay={action('onPlay')}
-        onPause={action('onPause')}
-      />
-    </div>
-  ))
-  .add('isPending', () => (
-    <div>
-      <MediaControlsView isPending />
-    </div>
-  ))
+storiesOf('MediaControlsView', module)
+  .add(
+    'Full example',
+    withInfo({
+      text: `
+        The pause/play controls.
+
+        \`<MediaControls />\` hooks up to the \`SoundcloudStore\`, but the
+        \`MediaControlsView\` is pure-ish.
+      `
+    })(() => <MediaControlsViewExample />)
+  )
+  .add(
+    'States',
+    withInfo({})(() => (
+      <div>
+        <h2>isPending</h2>
+        <MediaControlsView isPending />
+
+        <h2>isPlaying</h2>
+        <MediaControlsView
+          isPlaying
+          onPlay={action('onPlay')}
+          onPause={action('onPause')}
+        />
+
+        <h2>isPaused</h2>
+        <MediaControlsView
+          isPaused
+          onPlay={action('onPlay')}
+          onPause={action('onPause')}
+        />
+      </div>
+    ))
+  )
 
 /**
  * Example for `<MediaControlsView />`
