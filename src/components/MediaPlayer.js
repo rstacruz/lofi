@@ -60,7 +60,7 @@ export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
         ref={this.refIframe}
         allow='autoplay'
         width='100%'
-        height='465'
+        height='100%'
         scrolling='no'
         frameBorder='no'
         src={src}
