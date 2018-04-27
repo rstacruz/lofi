@@ -26,9 +26,22 @@ export class GifSlideshow extends React.Component {
     }
   }
 
+  /**
+   * Returns the current image.
+   */
+
   getImage () {
     const { images, index } = this.state
     return images[index]
+  }
+
+  /**
+   * Returns the images to be preloaded.
+   */
+
+  getPreload () {
+    const { images, index } = this.state
+    return [...images, ...images].slice(index + 1, index + 2)
   }
 
   nextImage () {
@@ -58,7 +71,8 @@ export class GifSlideshow extends React.Component {
 
   render () {
     const image = this.getImage()
-    return <GifSlide image={image} />
+    const preload = this.getPreload()
+    return <GifSlide image={image} preload={preload} />
   }
 }
 

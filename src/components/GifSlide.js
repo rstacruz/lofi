@@ -9,7 +9,7 @@ import * as VARS from '../styles/variables'
   }
 */
 
-export const GifSlide = ({ image } /*: Props */) => (
+export const GifSlide = ({ image, preload } /*: Props */) => (
   <div className='GifSlide'>
     {/* Looping image */}
     <span
@@ -18,6 +18,17 @@ export const GifSlide = ({ image } /*: Props */) => (
         backgroundImage: `url('${image}')`
       }}
     />
+
+    {/* Preloadables */}
+    {(preload || []).map(image => (
+      <span
+        key={image}
+        className='preload'
+        style={{
+          backgroundImage: `url('${image}')`
+        }}
+      />
+    ))}
 
     {/* Grid overlay */}
     <span className='grid' />
@@ -65,6 +76,11 @@ export const GifSlide = ({ image } /*: Props */) => (
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
+      }
+
+      .preload {
+        z-index: 0;
+        opacity: 0.01;
       }
 
       @keyframes fade-in {

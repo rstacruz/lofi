@@ -13,8 +13,8 @@ storiesOf('GifSlideshow', module).add(
       `
   })(() => (
     <div style={{ width: '800px', height: '450px' }}>
-      <StoryHeading title='Slideshow (interval 3000ms)' />
-      <GifSlideshow interval={3000} />
+      <StoryHeading title='Slideshow (interval 5000ms)' />
+      <GifSlideshow interval={5000} />
     </div>
   ))
 )
