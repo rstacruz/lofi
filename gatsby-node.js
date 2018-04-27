@@ -25,19 +25,19 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
  */
 
 const PAGES = {
-  timewriter: {
+  '/timewriter': {
     title: 'Lazy Sundays',
     href: 'https://soundcloud.com/jessinneijts/sets/timewriter-lazy-sundays',
     soundcloudURL: 'https://api.soundcloud.com/playlists/109759947'
   },
-  'lofi-hiphop': {
+  '/lofi-hiphop': {
     title: 'Lofi Beats',
     href: 'https://soundcloud.com/parzival6/sets/lo-fi-hip-hop',
     soundcloudURL: 'https://api.soundcloud.com/playlists/246258956'
   }
 }
 
-PAGES.index = PAGES['lofi-hiphop']
+PAGES['/'] = PAGES['/lofi-hiphop']
 
 /**
  * Dynamically create pages
@@ -50,7 +50,7 @@ exports.createPages = ({ boundActionCreators }) => {
   Object.keys(PAGES).map((path /*: string */) => {
     const page = PAGES[path]
     createPage({
-      path: `/${path}`,
+      path,
       context: page,
       component: PlayerTemplate
     })
