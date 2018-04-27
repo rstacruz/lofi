@@ -8,13 +8,10 @@ body {
 html {
   background: #111;
   color: #888;
-  font-family: sans-serif;
+  font-family: system-ui;
 }
 
-button {
-  background: transparent;
-  border: 0;
-  color: white;
-  font-weight: normal;
-  padding: 8px;
+a,
+a:visited {
+  text-decoration: none;
 }

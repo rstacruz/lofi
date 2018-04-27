@@ -49,6 +49,7 @@ export const MediaControlsView = ({
       }
 
       .button {
+        border: 0;
         width: 29px;
         height: 16px;
         border-radius: 12px;
