@@ -92,7 +92,7 @@ export const MediaControlsView = ({
       /* (On) container */
       .button.-pause {
         background: ${BACKGROUND_COLOR};
-        box-shadow: 0 0 1px 1px ${color(ACTIVE_COLOR).fade(0.9)};
+        box-shadow: 0 0 1px 1px ${color(ACTIVE_COLOR).fade(0.1).rotate(50).darken(0.7)};
       }
 
       /* (On) peg */
@@ -102,17 +102,23 @@ export const MediaControlsView = ({
 
       .button.-pause .peg::before {
         background: ${ACTIVE_COLOR};
-        box-shadow: 0 0 16px 2px ${ACTIVE_COLOR};
-        animation: pulse 1200ms ease-out infinite alternate-reverse;
+        box-shadow:
+          0 0 16px 2px ${ACTIVE_COLOR},
+          0 0 32px 2px ${color(ACTIVE_COLOR).rotate(50)};
+        animation: pulse 2400ms cubic-bezier(.07, .8, .12, .9) infinite;
       }
 
       @keyframes pulse {
         0% {
-          transform: scale(1);
+          transform: scale(0.8);
+        }
+
+        98% {
+          transform: scale(0.3);
         }
 
         100% {
-          transform: scale(0.5);
+          transform: scale(0.8);
         }
       }
     `}</style>
