@@ -7,15 +7,18 @@ import getSoundcloud from '../../lib/soundcloud'
 import SoundcloudStore from '../stores/SoundcloudStore'
 
 /*::
-  export type Props = {
+  export type Props = {|
     url: string
-  }
+  |}
 
-  export type ViewProps = {
+  export type State = {|
+  |}
+
+  export type ViewProps = {|
     url: string,
     dispatch: any,
     actions: any
-  }
+  |}
 */
 
 /**
@@ -24,7 +27,7 @@ import SoundcloudStore from '../stores/SoundcloudStore'
  * See: https://developers.soundcloud.com/docs/api/html5-widget
  */
 
-export class MediaPlayerView extends React.Component /*:: <Props> */ {
+export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
   state = {}
 
   render () {
@@ -127,10 +130,9 @@ export class MediaPlayerView extends React.Component /*:: <Props> */ {
       })
 
       widget.bind(SC.Widget.Events.PLAY, () => {
-        console.log('playing')
-        dispatch.setPlayerState('PLAYING')
-
         widget.getCurrentSound(sound => {
+          if (!sound) return
+          dispatch.setPlayerState('PLAYING')
           dispatch.setSound(sound)
         })
       })
