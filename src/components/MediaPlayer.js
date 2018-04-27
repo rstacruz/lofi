@@ -1,10 +1,12 @@
 /* @flow */
-
 import React from 'react'
 import qs from 'qs'
 import { Subscribe } from 'unstated'
+
 import getSoundcloud from '../../lib/soundcloud'
 import SoundcloudStore from '../stores/SoundcloudStore'
+
+const debug = require('debug')('app:MediaPlayer')
 
 /*::
   export type Props = {|
@@ -136,17 +138,17 @@ export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
       })
 
       widget.bind(SC.Widget.Events.PLAY, () => {
-        console.log('[MediaPlayer] Events.PLAY received')
+        debug('INFO: Events.PLAY received')
 
         widget.getCurrentSound(sound => {
           // Discard empty "plays"
           if (!sound) {
-            console.log('[MediaPlayer] discarding empty sound')
+            debug('ERR: discarding empty sound')
             return
           }
 
           if (!sound.title && !(sound.user && sound.user.username)) {
-            console.log('[MediaPlayer] discarding incomplete sound', sound)
+            debug('ERR: discarding incomplete sound', sound)
             return
           }
 
