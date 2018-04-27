@@ -1,6 +1,10 @@
 import React from 'react'
-import * as VARS from '../styles/variables'
 import Type from 'prop-types'
+
+import * as VARS from '../styles/variables'
+import GifSlide from '../components/GifSlide'
+
+const debug = require('debug')('app:GifSlideshow')
 
 /*::
   export type Props = {
@@ -8,83 +12,68 @@ import Type from 'prop-types'
   }
 */
 
-export const GifSlide = ({ image } /*: Props */) => (
-  <div className='GifSlideshow'>
-    {/* Looping image */}
-    <span
-      className='loop'
-      style={{
-        backgroundImage: `url('${VARS.gridImage}')`
-      }}
-    />
+/*
+ * Slideshow
+ */
 
-    {/* Grid overlay */}
-    {/* <span className='grid' /> */}
+export class GifSlideshow extends React.Component {
+  constructor (props) {
+    super(props)
+    const images = props.images || VARS.images
 
-    <style jsx>{`
-      .GifSlideshow {
-        position: relative;
-        animation: fade-in 2000ms linear;
-        width: 100%;
-        height: 100%;
-      }
+    this.state = {
+      images,
+      interval: props.interval || 15000,
+      index: props.index || Math.round(Math.random() * (images.length - 1))
+    }
+  }
 
-      .grid,
-      .loop {
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
+  getImage () {
+    const { images, index } = this.state
+    return images[index]
+  }
 
-      @media (min-width: 481px) {
-        /* (Desktop) Add some borders */
-        .grid,
-        .loop {
-          top: 8px;
-          left: 8px;
-          right: 8px;
-          bottom: 8px;
-        }
-      }
+  nextImage () {
+    let { index, images } = this.state
+    index += 1
+    if (index >= images.length) index = 0
+    debug('nextImage()', index)
+    this.setState({ index })
+  }
 
-      /* .grid {
-        z-index: 2;
-        background: linear-gradient(135deg, transparent 1px, ${VARS.gridBg} 1px)
-          left top / ${VARS.gridSize} ${VARS.gridSize};
-      } */
+  componentDidMount () {
+    this.tick()
+  }
 
-      .loop {
-        z-index: 1;
-        background-color: ${VARS.gridBg};
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-      }
+  componentWillUnmount () {
+    clearTimeout(this.timer)
+    this.timer = undefined
+  }
 
-      @keyframes fade-in {
-        0% {
-          opacity: 0;
-        }
+  tick () {
+    const { interval } = this.state
 
-        50% {
-          opacity: 0;
-        }
+    this.timer = setTimeout(() => {
+      this.nextImage()
+      this.tick()
+    }, interval)
+  }
 
-        100% {
-          opacity: 1;
-        }
-      }
-    `}</style>
-  </div>
-)
-
-GifSlide.propTypes = {
-  image: Type.string
+  render () {
+    const image = this.getImage()
+    debug('render()', image)
+    return <GifSlide image={image} />
+  }
 }
 
-export const GifSlideshow = () => <GifSlide image={VARS.gridImage} />
+GifSlideshow.propTypes = {
+  interval: Type.number,
+  images: Type.arrayOf(Type.string),
+  index: Type.number
+}
+
+/*
+ * Default export
+ */
 
 export default GifSlideshow
