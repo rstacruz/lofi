@@ -139,11 +139,11 @@ export const connect = View => () => (
         onPause={() => {
           soundcloud.pause()
         }}
-        isPaused={
-          soundcloud.state.state === 'READY' ||
-          soundcloud.state.state === 'PAUSED'
+        isPaused={soundcloud.state.state === 'PAUSED'}
+        isPending={
+          soundcloud.state.state === 'PENDING' ||
+          soundcloud.state.state === 'READY'
         }
-        isPending={soundcloud.state.state === 'PENDING'}
         isPlaying={soundcloud.state.state === 'PLAYING'}
       />
     )}
