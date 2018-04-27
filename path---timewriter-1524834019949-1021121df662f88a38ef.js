@@ -1,2 +1,2 @@
 webpackJsonp([0xd9ca00c25090],{326:function(s,t){s.exports={pathContext:{title:"Lazy Sundays",href:"https://soundcloud.com/jessinneijts/sets/timewriter-lazy-sundays",soundcloudURL:"https://api.soundcloud.com/playlists/109759947"}}}});
-//# sourceMappingURL=path---timewriter-1524833761559-1021121df662f88a38ef.js.map
+//# sourceMappingURL=path---timewriter-1524834019949-1021121df662f88a38ef.js.map
