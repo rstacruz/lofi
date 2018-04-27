@@ -7,7 +7,7 @@ import Type from 'prop-types'
 
 export const INACTIVE_COLOR = '#fff'
 export const ACTIVE_COLOR = '#8fa'
-export const BACKGROUND_COLOR = '#111'
+export const BACKGROUND_COLOR = '#1e1e24'
 export const HEIGHT = 20
 export const WIDTH = 40
 
@@ -55,13 +55,26 @@ export const MediaControlsView = ({
         width: ${WIDTH}px;
         height: ${HEIGHT}px;
         border-radius: ${HEIGHT}px;
-        background-color: ${BACKGROUND_COLOR};
-        box-shadow: 0 0 0 2px ${INACTIVE_COLOR};
         position: relative;
         display: inline-block;
         transition: background-color 300ms ease-out, box-shadow 300ms ease-out;
         cursor: pointer;
         box-sizing: border-box;
+      }
+
+      /* Track */
+      .button::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: ${HEIGHT}px;
+        background-color: ${BACKGROUND_COLOR};
+        box-shadow: 0 0 0 2px ${INACTIVE_COLOR};
+        transition: transform 300ms ease-out, box-shadow 150ms ease-out;
       }
 
       .button,
@@ -73,6 +86,7 @@ export const MediaControlsView = ({
       /* Peg */
       .peg {
         position: absolute;
+        z-index: 5;
         left: 3px;
         top: 3px;
         transition: transform 300ms ease-out;
@@ -91,8 +105,14 @@ export const MediaControlsView = ({
 
       /* (On) container */
       .button.-pause {
-        background: ${BACKGROUND_COLOR};
-        box-shadow: 0 0 0 0 ${color(ACTIVE_COLOR).fade(0.1).rotate(50).darken(0.7)};
+        background: transparent;
+        box-shadow: 0 0 0 0 ${BACKGROUND_COLOR};
+      }
+
+      /* (On) track */
+      .button.-pause::before {
+        box-shadow: 0 0 0 0 ${BACKGROUND_COLOR};
+        transform: scale(0.5);
       }
 
       /* (On) peg */
@@ -102,10 +122,9 @@ export const MediaControlsView = ({
 
       .button.-pause .peg::before {
         background: ${ACTIVE_COLOR};
-        box-shadow:
-          0 0 16px 2px ${ACTIVE_COLOR},
+        box-shadow: 0 0 16px 2px ${ACTIVE_COLOR},
           0 0 32px 2px ${color(ACTIVE_COLOR).rotate(50)};
-        animation: pulse 2400ms cubic-bezier(.07, .8, .12, .9) infinite;
+        animation: pulse 2400ms cubic-bezier(0.07, 0.8, 0.12, 0.9) infinite;
       }
 
       @keyframes pulse {
