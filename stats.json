@@ -1,54 +1,54 @@
 {
   "assetsByChunkName": {
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-1524831930523-b178cbb68efeba7b9dc1.js",
-      "component---src-pages-index-js-1524831930523-b178cbb68efeba7b9dc1.js.map"
+      "component---src-pages-index-js-1524832237194-b178cbb68efeba7b9dc1.js",
+      "component---src-pages-index-js-1524832237194-b178cbb68efeba7b9dc1.js.map"
     ],
     "path---": [
-      "path----1524831930523-35e9f9e30822ec8efb34.js",
-      "path----1524831930523-35e9f9e30822ec8efb34.js.map"
+      "path----1524832237194-35e9f9e30822ec8efb34.js",
+      "path----1524832237194-35e9f9e30822ec8efb34.js.map"
     ],
     "component---src-templates-player-template-js": [
-      "component---src-templates-player-template-js-1524831930523-08f5456894cadbf3c138.js",
-      "component---src-templates-player-template-js-1524831930523-08f5456894cadbf3c138.js.map"
+      "component---src-templates-player-template-js-1524832237194-c678bf171a3d16593a95.js",
+      "component---src-templates-player-template-js-1524832237194-c678bf171a3d16593a95.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-1524831930523-eb7121bac1fbcc5995ce.js",
-      "component---src-layouts-index-js-1524831930523-eb7121bac1fbcc5995ce.js.map"
+      "component---src-layouts-index-js-1524832237194-eb7121bac1fbcc5995ce.js",
+      "component---src-layouts-index-js-1524832237194-eb7121bac1fbcc5995ce.js.map"
     ],
     "path---index": [
-      "path---index-1524831930523-5b87f781f8df988b571c.js",
-      "path---index-1524831930523-5b87f781f8df988b571c.js.map"
+      "path---index-1524832237194-5b87f781f8df988b571c.js",
+      "path---index-1524832237194-5b87f781f8df988b571c.js.map"
     ],
     "component---src-pages-404-js": [
-      "component---src-pages-404-js-1524831930523-4503918ea3a16cfcdb75.js",
-      "component---src-pages-404-js-1524831930523-4503918ea3a16cfcdb75.js.map"
+      "component---src-pages-404-js-1524832237194-4503918ea3a16cfcdb75.js",
+      "component---src-pages-404-js-1524832237194-4503918ea3a16cfcdb75.js.map"
     ],
     "commons": [
-      "commons-1524831930523-d8806f5782cd0c02421e.js",
-      "commons-1524831930523-d8806f5782cd0c02421e.js.map"
+      "commons-1524832237194-d8806f5782cd0c02421e.js",
+      "commons-1524832237194-d8806f5782cd0c02421e.js.map"
     ],
     "path---404-html": [
-      "path---404-html-1524831930523-a0e39f21c11f6a62c5ab.js",
-      "path---404-html-1524831930523-a0e39f21c11f6a62c5ab.js.map"
+      "path---404-html-1524832237194-a0e39f21c11f6a62c5ab.js",
+      "path---404-html-1524832237194-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---lofi-hiphop": [
-      "path---lofi-hiphop-1524831930523-94fba5aa45b731ae9188.js",
-      "path---lofi-hiphop-1524831930523-94fba5aa45b731ae9188.js.map"
+      "path---lofi-hiphop-1524832237194-94fba5aa45b731ae9188.js",
+      "path---lofi-hiphop-1524832237194-94fba5aa45b731ae9188.js.map"
     ],
     "app": [
-      "app-1524831930523-0eb1e520d131cdac7619.js",
+      "app-1524832237194-0eb1e520d131cdac7619.js",
       "build-js-styles.css",
-      "app-1524831930523-0eb1e520d131cdac7619.js.map",
+      "app-1524832237194-0eb1e520d131cdac7619.js.map",
       "build-js-styles.css.map"
     ],
     "path---timewriter": [
-      "path---timewriter-1524831930523-1021121df662f88a38ef.js",
-      "path---timewriter-1524831930523-1021121df662f88a38ef.js.map"
+      "path---timewriter-1524832237194-1021121df662f88a38ef.js",
+      "path---timewriter-1524832237194-1021121df662f88a38ef.js.map"
     ],
     "path---404": [
-      "path---404-1524831930523-a0e39f21c11f6a62c5ab.js",
-      "path---404-1524831930523-a0e39f21c11f6a62c5ab.js.map"
+      "path---404-1524832237194-a0e39f21c11f6a62c5ab.js",
+      "path---404-1524832237194-a0e39f21c11f6a62c5ab.js.map"
     ]
   }
 }
