@@ -1,4 +1,5 @@
 const root = require('path').resolve.bind(null, __dirname)
+const STATIONS = require(root('src/data/stations.js'))
 
 /**
  * See: https://github.com/gatsbyjs/gatsby/issues/2538#issuecomment-356769913
@@ -21,39 +22,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
 }
 
 /**
- * Pages
- */
-
-const PAGES = {
-  '/lofi-hiphop': {
-    title: 'Lofi Beats',
-    href: 'https://soundcloud.com/parzival6/sets/lo-fi-hip-hop',
-    soundcloudURL: 'https://api.soundcloud.com/playlists/246258956'
-  },
-  '/timewriter': {
-    title: 'Lazy Sundays',
-    href: 'https://soundcloud.com/jessinneijts/sets/timewriter-lazy-sundays',
-    soundcloudURL: 'https://api.soundcloud.com/playlists/109759947'
-  },
-  '/mushroom-jazz': {
-    title: 'Mushroom Jazz',
-    href: 'https://soundcloud.com/djmarkfarina/sets/mushroom-jazz-mixes',
-    soundcloudURL: 'https://api.soundcloud.com/playlists/309781662'
-  },
-  '/morning-bliss': {
-    title: 'Morning Bliss',
-    href:
-      'https://soundcloud.com/user-876658341/sets/sunday-morning-kisses-and',
-    soundcloudURL: 'https://api.soundcloud.com/playlists/424032182'
-  },
-  '/worldwide-fm': {
-    title: 'Worldwide FM',
-    href: 'https://soundcloud.com/worldwide-fm/sets/new-music-worldwide-guest-mixes',
-    soundcloudURL: 'https://api.soundcloud.com/playlists/331692615'
-  }
-}
-
-/**
  * Dynamically create pages
  */
 
@@ -61,11 +29,11 @@ exports.createPages = ({ boundActionCreators }) => {
   const PlayerTemplate = root('src/templates/PlayerTemplate.js')
   const { createPage } = boundActionCreators
 
-  Object.keys(PAGES).map((path /*: string */) => {
-    const page = PAGES[path]
+  Object.keys(STATIONS).map((path /*: string */) => {
+    const station = STATIONS[path]
     createPage({
       path: path,
-      context: page,
+      context: station,
       component: PlayerTemplate
     })
   })
@@ -73,7 +41,7 @@ exports.createPages = ({ boundActionCreators }) => {
   // A homepage
   createPage({
     path: '/',
-    context: PAGES['/lofi-hiphop'],
+    context: STATIONS['/lofi-hiphop'],
     component: PlayerTemplate
   })
 }
