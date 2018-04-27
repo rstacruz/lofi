@@ -14,7 +14,7 @@ export const StationLink = ({ path, title }) => (
           text-decoration: none;
           font-weight: bold;
           display: block;
-          padding: 8px;
+          padding: 16px 8px;
           text-align: center;
           border-radius: 3px;
         }
