@@ -3,20 +3,22 @@ import React from 'react'
 import PlayerPage from '../components/PlayerPage'
 import { Subscribe } from 'unstated'
 import SoundcloudStore from '../stores/SoundcloudStore'
+import { getStations } from '../queries/all_stations'
 
 /*
  * Template for player pages
  */
 
 export const PlayerTemplate = props => {
-  const { pathContext: ctx } = props
+  const { pathContext: ctx, data } = props
+  const stations = getStations(data)
 
   // const { title, href, soundcloudURL } = ctx
   return (
     <Subscribe to={[SoundcloudStore]}>
       {soundcloud => (
         <SoundcloudReseter soundcloud={soundcloud}>
-          <PlayerPage {...{ ...ctx, stations: [] }} />
+          <PlayerPage {...{ ...ctx, stations }} />
         </SoundcloudReseter>
       )}
     </Subscribe>
@@ -45,3 +47,26 @@ class SoundcloudReseter extends React.Component {
  */
 
 export default PlayerTemplate
+
+/**
+ * GraphQL to get all stations
+ */
+
+export const pageQuery = graphql`
+  query PlayerTemplateQuery {
+    allSitePage {
+      edges {
+        node {
+          id
+          path
+          layout
+          context {
+            title
+            href
+            soundcloudURL
+          }
+        }
+      }
+    }
+  }
+`

@@ -28,7 +28,8 @@ import StationLinks from '../components/StationLinks'
 
   export type Props = {
     soundcloudURL: string,
-    title?: string
+    title: string,
+    stations: Array<Station>
   }
 */
 
@@ -63,12 +64,7 @@ export const PlayerPageView = (
       ) : null}
 
       <div className='stations'>
-        <StationLinks
-          stations={[
-            { path: '/lofi-hiphop', title: 'Lofi Beats' },
-            { path: '/timewriter', title: 'Timewriter' }
-          ]}
-        />
+        <StationLinks stations={stations} />
       </div>
 
       <div
@@ -139,7 +135,7 @@ export const PlayerPageView = (
  * Connected `<PlayerPageView />`
  */
 
-export const PlayerPage = ({ soundcloudURL, title } /*: Props */) => (
+export const PlayerPage = ({ soundcloudURL, title, stations } /*: Props */) => (
   <Subscribe to={[SoundcloudStore, UIStore]}>
     {(soundcloud, ui) => (
       <PlayerPageView
@@ -151,6 +147,7 @@ export const PlayerPage = ({ soundcloudURL, title } /*: Props */) => (
         soundcloudURL={soundcloudURL}
         dispatch={soundcloud}
         actions={soundcloud.state.actions}
+        stations={stations}
       >
         <Helmet title={title} />
       </PlayerPageView>
