@@ -1,6 +1,5 @@
 import React from 'react'
 import Type from 'prop-types'
-import color from 'color'
 
 import * as VARS from '../styles/variables'
 
@@ -54,8 +53,10 @@ export const GifSlide = ({ image } /*: Props */) => (
 
       .grid {
         z-index: 2;
-        background: linear-gradient(135deg, transparent 1px, ${VARS.gridBg} 2px)
-          left top / ${VARS.gridSize} ${VARS.gridSize};
+        background-image: radial-gradient(transparent 30%, ${VARS.gridBg} 35%);
+        background-size: ${VARS.gridSize} ${VARS.gridSize};
+        background-position: left top;
+        background-repeat: repeat;
       }
 
       .loop {
