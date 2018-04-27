@@ -1,3 +1,4 @@
+/* @flow */
 import React from 'react'
 import Type from 'prop-types'
 
@@ -6,7 +7,16 @@ import GifSlide from '../components/GifSlide'
 
 /*::
   export type Props = {
-    image: string
+    interval: number,
+    images: Array<string>,
+    index: number,
+    visible: boolean
+  }
+
+  export type State = {
+   interval: number,
+   images: Array<string>,
+   index: number
   }
 */
 
@@ -14,7 +24,7 @@ import GifSlide from '../components/GifSlide'
  * Slideshow
  */
 
-export class GifSlideshow extends React.Component {
+export class GifSlideshow extends React.Component /*:: <Props, State> */ {
   constructor (props) {
     super(props)
     const images = shuffle(props.images)
@@ -72,7 +82,9 @@ export class GifSlideshow extends React.Component {
   render () {
     const image = this.getImage()
     const preload = this.getPreload()
-    return <GifSlide image={image} preload={preload} />
+    const { visible } = this.props
+
+    return <GifSlide {...{ image, preload, visible }} />
   }
 }
 
@@ -90,7 +102,8 @@ GifSlideshow.propTypes = {
 GifSlideshow.defaultProps = {
   interval: 15000,
   images: VARS.images,
-  index: 0
+  index: 0,
+  visible: true
 }
 
 /**

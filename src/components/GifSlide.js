@@ -1,16 +1,19 @@
 import React from 'react'
 import Type from 'prop-types'
+import cn from 'classnames'
 
 import * as VARS from '../styles/variables'
 
 /*::
   export type Props = {
-    image: string
+    image: string,
+    preload: Array<string>,
+    visible: boolean
   }
 */
 
-export const GifSlide = ({ image, preload } /*: Props */) => (
-  <div className='GifSlide'>
+export const GifSlide = ({ image, preload, visible } /*: Props */) => (
+  <div className={cn('GifSlide', { '-hidden': !visible, '-visible': visible })}>
     {/* Looping image */}
     <span
       className='loop'
@@ -44,6 +47,13 @@ export const GifSlide = ({ image, preload } /*: Props */) => (
         height: 100%;
         overflow: hidden;
         transform: translate3d(0, 0, 0);
+        opacity: 0;
+        transition: opacity 2000ms linear;
+      }
+
+      .GifSlide.-visible {
+        opacity: 1;
+        animation: fade-in 2000ms linear;
       }
 
       .grid,
