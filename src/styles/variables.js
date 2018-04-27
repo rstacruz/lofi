@@ -4,6 +4,11 @@ export const gridSize = '4px'
 
 export const gridBg = '#113'
 
+/*
+ * Cinemagraph images
+ * See: https://www.tumblr.com/search/cinemagraph
+ */
+
 export const images = [
   // Bike
   // https://juliendouvier.tumblr.com/post/163862485221#notes
@@ -34,7 +39,15 @@ export const images = [
 
   // Lake
   // https://juliendouvier.tumblr.com/post/101372057946#notes
-  'https://78.media.tumblr.com/b74e2e5f995eba9bfa1a7c862bf5629b/tumblr_nea4onxsgk1s85u2fo1_500.gif'
+  'https://78.media.tumblr.com/b74e2e5f995eba9bfa1a7c862bf5629b/tumblr_nea4onxsgk1s85u2fo1_500.gif',
+
+  // Bike 2
+  // https://juliendouvier.tumblr.com/post/163749567311/i-just-made-a-short-video-with-some-nice-tricks#notes
+  'https://78.media.tumblr.com/84d45193fb816d580c98253eba90a5c8/tumblr_ou3u1qvFjZ1s85u2fo1_500.gif',
+
+  // Tunnel driving
+  // https://livingstills.tumblr.com/post/139015123907
+  'https://78.media.tumblr.com/55d28facac8ec4762197c8e5c523b189/tumblr_o2ayekYBiz1upvbufo1_r2_500.gif'
 ]
 
-export const gridImage = images[6]
+export const gridImage = images[8]

@@ -1,8 +1,14 @@
 import React from 'react'
 import * as VARS from '../styles/variables'
-// import PropTypes from 'prop-types'
+import Type from 'prop-types'
 
-export const GifSlideshow = () => (
+/*::
+  export type Props = {
+    image: string
+  }
+*/
+
+export const GifSlide = ({ image } /*: Props */) => (
   <div className='GifSlideshow'>
     {/* Looping image */}
     <span
@@ -13,7 +19,7 @@ export const GifSlideshow = () => (
     />
 
     {/* Grid overlay */}
-    <span className='grid' />
+    {/* <span className='grid' /> */}
 
     <style jsx>{`
       .GifSlideshow {
@@ -33,11 +39,11 @@ export const GifSlideshow = () => (
         bottom: 6px;
       }
 
-      .grid {
+      /* .grid {
         z-index: 2;
         background: linear-gradient(135deg, transparent 1px, ${VARS.gridBg} 1px)
           left top / ${VARS.gridSize} ${VARS.gridSize};
-      }
+      } */
 
       .loop {
         z-index: 1;
@@ -64,8 +70,10 @@ export const GifSlideshow = () => (
   </div>
 )
 
-// GifSlideshow.propTypes = {
-//   image: PropTypes.string
-// }
+GifSlide.propTypes = {
+  image: Type.string
+}
+
+export const GifSlideshow = () => <GifSlide image={VARS.gridImage} />
 
 export default GifSlideshow
