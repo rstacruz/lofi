@@ -5,8 +5,11 @@ export const gridSize = '3px'
 export const gridBg = '#1e1e24'
 
 /*
- * Cinemagraph images
- * See: https://www.tumblr.com/search/cinemagraph
+ * Cinemagraph images.
+ *
+ * See:
+ * - https://www.tumblr.com/search/cinemagraph
+ * - https://juliendouvier.tumblr.com/
  */
 
 export const images = [
@@ -25,10 +28,6 @@ export const images = [
   // VU meter
   // https://juliendouvier.tumblr.com/post/92522918506#notes
   'https://78.media.tumblr.com/c83b5721adeaeaa74fce184fa51f8526/tumblr_n940167n2Y1s85u2fo1_r1_500.gif',
-
-  // Girl
-  // https://juliendouvier.tumblr.com/post/96966597216#notes
-  'https://78.media.tumblr.com/7ceeb87d2bc21163ed0343bdccdcbba9/tumblr_nbkzb4DvfK1s85u2fo1_500.gif',
 
   // Lake
   // https://juliendouvier.tumblr.com/post/101372057946#notes

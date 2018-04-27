@@ -1,5 +1,6 @@
 import React from 'react'
 import Type from 'prop-types'
+import color from 'color'
 
 import * as VARS from '../styles/variables'
 
@@ -22,6 +23,9 @@ export const GifSlide = ({ image } /*: Props */) => (
     {/* Grid overlay */}
     <span className='grid' />
 
+    {/* Gradient overlay */}
+    <span className='wash' />
+
     <style jsx>{`
       .GifSlide {
         position: relative;
@@ -31,7 +35,8 @@ export const GifSlide = ({ image } /*: Props */) => (
       }
 
       .grid,
-      .loop {
+      .loop,
+      .wash {
         position: absolute;
         display: block;
         top: 0;
@@ -43,7 +48,8 @@ export const GifSlide = ({ image } /*: Props */) => (
       @media (min-width: 481px) {
         /* (Desktop) Add some borders */
         .grid,
-        .loop {
+        .loop,
+        .wash {
           top: 16px;
           left: 16px;
           right: 16px;
@@ -55,6 +61,15 @@ export const GifSlide = ({ image } /*: Props */) => (
         z-index: 2;
         background: linear-gradient(135deg, transparent 1px, ${VARS.gridBg} 2px)
           left top / ${VARS.gridSize} ${VARS.gridSize};
+      }
+
+      .wash {
+        z-index: 2;
+        background: linear-gradient(
+          to bottom,
+          transparent 50%,
+          ${color('#000').fade(0.3)}
+        );
       }
 
       .loop {
