@@ -45,6 +45,11 @@ const PAGES = {
     href:
       'https://soundcloud.com/user-876658341/sets/sunday-morning-kisses-and',
     soundcloudURL: 'https://api.soundcloud.com/playlists/424032182'
+  },
+  '/worldwide-fm': {
+    title: 'Worldwide FM',
+    href: 'https://soundcloud.com/worldwide-fm/sets/new-music-worldwide-guest-mixes',
+    soundcloudURL: 'https://api.soundcloud.com/playlists/331692615'
   }
 }
 
