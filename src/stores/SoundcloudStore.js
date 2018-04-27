@@ -16,6 +16,10 @@ export default class SoundcloudStore extends Container {
     actions: []
   }
 
+  reset () {
+    this.setState({ state: 'PENDING', sounds: null, sound: null, actions: [] })
+  }
+
   setPlayerState (state) {
     if (this.state.state === state) {
       debug('setPlayerState() ERR: Discarding conguent state', state)

@@ -38,7 +38,7 @@ export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
 
     const options = {
       url,
-      auto_play: false,
+      auto_play: true,
       buying: false,
       liking: false,
       download: false,
