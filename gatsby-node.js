@@ -54,4 +54,11 @@ exports.createPages = ({ boundActionCreators }) => {
       component: PlayerTemplate
     })
   })
+
+  // A homepage
+  createPage({
+    path: '/',
+    context: PAGES['/lofi-hiphop'],
+    component: PlayerTemplate
+  })
 }
