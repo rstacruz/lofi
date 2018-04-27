@@ -135,34 +135,34 @@ export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
         // Skip to random track on startup
         const idx = Math.round(sounds.length * Math.random())
         widget.skip(idx)
-      })
 
-      widget.bind(SC.Widget.Events.PLAY, () => {
-        debug('INFO: Events.PLAY received')
-
-        widget.getCurrentSound(sound => {
-          // Discard empty "plays"
-          if (!sound) {
-            debug('ERR: discarding empty sound')
-            return
-          }
-
-          if (!sound.title && !(sound.user && sound.user.username)) {
-            debug('ERR: discarding incomplete sound', sound)
-            return
-          }
-
+        widget.bind(SC.Widget.Events.PLAY, () => {
+          debug('INFO: Events.PLAY received')
           dispatch.setPlayerState('PLAYING')
-          dispatch.setSound(sound)
+
+          widget.getCurrentSound(sound => {
+            // Discard empty "plays"
+            if (!sound) {
+              debug('ERR: discarding empty sound')
+              return
+            }
+
+            if (!sound.title && !(sound.user && sound.user.username)) {
+              debug('ERR: discarding incomplete sound', sound)
+              return
+            }
+
+            dispatch.setSound(sound)
+          })
         })
-      })
 
-      widget.bind(SC.Widget.Events.PAUSE, () => {
-        dispatch.setPlayerState('PAUSED')
-      })
+        widget.bind(SC.Widget.Events.PAUSE, () => {
+          dispatch.setPlayerState('PAUSED')
+        })
 
-      widget.bind(SC.Widget.Events.FINISH, () => {
-        dispatch.setPlayerState('FINISH')
+        widget.bind(SC.Widget.Events.FINISH, () => {
+          dispatch.setPlayerState('FINISH')
+        })
       })
     })
   }
