@@ -1,6 +1,6 @@
 /* Style constants */
 
-export const gridSize = '4px'
+export const gridSize = '3px'
 
 export const gridBg = '#113'
 

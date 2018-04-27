@@ -77,7 +77,6 @@ export const StationLinksView = (
       .toggle:focus,
       .toggle:hover {
         outline: 0;
-        background: #fff1;
       }
 
       .toggle::before {

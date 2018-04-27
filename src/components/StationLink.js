@@ -22,8 +22,6 @@ export const StationLink = ({ path, title }) => (
         .StationLink:hover,
         .StationLink:focus {
           outline: 0;
-          background: #fff1;
-      }
         }
       `}</style>
     </span>

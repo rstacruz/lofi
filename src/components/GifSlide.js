@@ -1,6 +1,7 @@
 import React from 'react'
-import * as VARS from '../styles/variables'
 import Type from 'prop-types'
+
+import * as VARS from '../styles/variables'
 
 /*::
   export type Props = {
@@ -19,7 +20,7 @@ export const GifSlide = ({ image } /*: Props */) => (
     />
 
     {/* Grid overlay */}
-    {/* <span className='grid' /> */}
+    <span className='grid' />
 
     <style jsx>{`
       .GifSlide {
@@ -50,11 +51,11 @@ export const GifSlide = ({ image } /*: Props */) => (
         }
       }
 
-      /* .grid {
+      .grid {
         z-index: 2;
-        background: linear-gradient(135deg, transparent 1px, ${VARS.gridBg} 1px)
+        background: linear-gradient(135deg, transparent 1px, ${VARS.gridBg} 2px)
           left top / ${VARS.gridSize} ${VARS.gridSize};
-      } */
+      }
 
       .loop {
         z-index: 1;
