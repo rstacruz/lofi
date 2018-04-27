@@ -16,8 +16,16 @@ export default class SoundcloudStore extends Container {
   }
 
   setPlayerState (state) {
-    console.log('setPlayerState()', state)
-    if (this.state.state === state) return
+    if (this.state.state === state) {
+      console.log(
+        '[SoundcloudStore] setPlayerState():',
+        'Discarding conguent state',
+        state
+      )
+      return
+    }
+
+    console.log('[SoundcloudStore] setPlayerState():', state)
     this.setState({ state })
   }
 
@@ -26,12 +34,22 @@ export default class SoundcloudStore extends Container {
   }
 
   setSound (sound) {
+    if (JSON.stringify(sound) === JSON.stringify(this.state.sound)) {
+      console.log(
+        '[SoundcloudStore] setSound():',
+        'Discarding congruent sound',
+        sound
+      )
+      return
+    }
+
     console.log(
-      'setSound()',
+      '[SoundcloudStore] setSound()',
       sound.user && sound.user.username,
       '-',
       sound.title
     )
+
     this.setState({ sound })
     // csound.permalink_url
     // csound.artwork_url

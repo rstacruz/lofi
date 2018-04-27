@@ -136,8 +136,20 @@ export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
       })
 
       widget.bind(SC.Widget.Events.PLAY, () => {
+        console.log('[MediaPlayer] Events.PLAY received')
+
         widget.getCurrentSound(sound => {
-          if (!sound) return
+          // Discard empty "plays"
+          if (!sound) {
+            console.log('[MediaPlayer] discarding empty sound')
+            return
+          }
+
+          if (!sound.title && !(sound.user && sound.user.username)) {
+            console.log('[MediaPlayer] discarding incomplete sound', sound)
+            return
+          }
+
           dispatch.setPlayerState('PLAYING')
           dispatch.setSound(sound)
         })

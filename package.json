@@ -35,7 +35,8 @@
   "scripts": {
     "build": "gatsby build --prefix-paths",
     "lint": "eslint src/ lib/",
-    "develop": "rm -rf .cache public && gatsby develop",
+    "develop": "rm -rf .cache public && gatsby develop -H 0.0.0.0",
+    "develop:local": "rm -rf .cache public && gatsby develop",
     "format": "prettier-eslint --write 'src/**/*.js' 'lib/**/*.js'",
     "format:list": "prettier-eslint --list-different 'src/**/*.js' 'lib/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",

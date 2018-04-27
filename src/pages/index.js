@@ -7,9 +7,6 @@ import IndexPage from '../components/IndexPage'
  */
 
 export const IndexTemplate = props => {
-  // Happened on a `gatsby build`, no idea why though!
-  console.log(JSON.stringify(props, null, 2))
-
   const edges = props.data.allSitePage.edges
   const pages = getPageNodes(edges)
 
