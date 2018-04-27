@@ -50,4 +50,4 @@ export const images = [
   'https://78.media.tumblr.com/55d28facac8ec4762197c8e5c523b189/tumblr_o2ayekYBiz1upvbufo1_r2_500.gif'
 ]
 
-export const gridImage = images[8]
+export const gridImage = images[7]

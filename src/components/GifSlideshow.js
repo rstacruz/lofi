@@ -33,10 +33,21 @@ export const GifSlide = ({ image } /*: Props */) => (
       .loop {
         position: absolute;
         display: block;
-        top: 6px;
-        left: 6px;
-        right: 6px;
-        bottom: 6px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      @media (min-width: 481px) {
+        /* (Desktop) Add some borders */
+        .grid,
+        .loop {
+          top: 8px;
+          left: 8px;
+          right: 8px;
+          bottom: 8px;
+        }
       }
 
       /* .grid {
