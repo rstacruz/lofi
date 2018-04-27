@@ -10,6 +10,7 @@ export const gridBg = '#1e1e24'
  * See:
  * - https://www.tumblr.com/search/cinemagraph
  * - https://juliendouvier.tumblr.com/
+ * - https://leahberman.tumblr.com/
  */
 
 export const images = [
@@ -45,5 +46,3 @@ export const images = [
   // https://juliendouvier.tumblr.com/post/76011830515#notes
   'https://78.media.tumblr.com/b2b9c8348b0b66a43f4b8584db5f12d1/tumblr_n05vpfV6MG1s85u2fo1_500.gif'
 ]
-
-export const gridImage = images[7]
