@@ -1,16 +1,13 @@
+/* @flow */
 import React from 'react'
-import Link from 'gatsby-link'
+import StationLinks from './StationLinks'
 
-export const IndexPage = ({ pages }) => (
-  <div>
-    {pages.map(page => (
-      <div>
-        <Link to={page.path} key={page.path}>
-          {page.title}
-        </Link>
-      </div>
-    ))}
-  </div>
+/*::
+  import type { PageList } from '../types'
+*/
+
+export const IndexPage = ({ pages } /*: { pages: PageList } */) => (
+  <StationLinks pages={pages} />
 )
 
 export default IndexPage
