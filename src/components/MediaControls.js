@@ -92,7 +92,7 @@ export const MediaControlsView = ({
       /* (On) container */
       .button.-pause {
         background: ${BACKGROUND_COLOR};
-        box-shadow: 0 0 1px 1px ${color(ACTIVE_COLOR).fade(0.1).rotate(50).darken(0.7)};
+        box-shadow: 0 0 0 0 ${color(ACTIVE_COLOR).fade(0.1).rotate(50).darken(0.7)};
       }
 
       /* (On) peg */
