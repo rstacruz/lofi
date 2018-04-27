@@ -2,7 +2,7 @@
 
 export const gridSize = '3px'
 
-export const gridBg = '#113'
+export const gridBg = '#1e1e24'
 
 /*
  * Cinemagraph images
