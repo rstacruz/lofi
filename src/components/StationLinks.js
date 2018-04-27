@@ -54,13 +54,13 @@ export const StationLinksView = (
       .list.-closed {
         opacity: 0;
         pointer-events: none;
-        transform: translate3d(0, 32px, 0) scale(0.9);
+        transform: translate3d(0, 32px, 0);
       }
 
       .list.-opened {
         opacity: 1;
         pointer-events: auto;
-        transform: translate3d(0, 0, 0) scale(1);
+        transform: translate3d(0, 0, 0);
       }
 
       .toggle {
@@ -79,6 +79,10 @@ export const StationLinksView = (
         outline: 0;
       }
 
+      .toggle:hover {
+        opacity: 1;
+      }
+
       .toggle::before {
         content: '';
         display: inline-block;
@@ -87,11 +91,13 @@ export const StationLinksView = (
         border-left: solid 1px white;
         border-top: solid 1px white;
         transform: rotate(45deg) translate3d(3px, 3px, 0);
-        transition: transform 300ms ease-out;
+        transition: transform 300ms ease-out, opacity 300ms linear;
+        opacity: 0.25;
       }
 
       .toggle.-opened::before {
         transform: rotate(225deg) translate3d(1px, 1px, 0);
+        opacity: 1;
       }
     `}</style>
   </div>

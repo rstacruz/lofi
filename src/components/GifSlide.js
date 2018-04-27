@@ -20,13 +20,6 @@ export const GifSlide = ({ image } /*: Props */) => (
       }}
     />
 
-    <span
-      className='loop -overlay -one'
-      style={{
-        backgroundImage: `url('${image}')`
-      }}
-    />
-
     {/* Grid overlay */}
     <span className='grid' />
 
@@ -54,6 +47,11 @@ export const GifSlide = ({ image } /*: Props */) => (
         bottom: 0;
       }
 
+      .wash {
+        z-index: 3;
+        background: linear-gradient(to bottom, transparent 50%, #0008);
+      }
+
       .grid {
         z-index: 2;
         background: linear-gradient(135deg, transparent 1px, ${VARS.gridBg} 2px)
@@ -66,13 +64,6 @@ export const GifSlide = ({ image } /*: Props */) => (
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
-      }
-
-      .loop.-overlay {
-        left: -16px;
-        opacity: 0.3;
-        filter: brightness(70%) saturate(200%) hue-rotate(284deg);
-        mix-blend-mode: screen;
       }
 
       @keyframes fade-in {
