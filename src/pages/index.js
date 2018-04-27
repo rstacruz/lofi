@@ -3,11 +3,17 @@ import React from 'react'
 import IndexPage from '../components/IndexPage'
 
 export const IndexTemplate = props => {
+  // Happened on a `gatsby build`, no idea why though!
+  if (!props.pageResources) {
+    console.error('IndexTemplate: no pageResources found')
+    return <div />
+  }
+
   const edges = props.pageResources.json.data.allSitePage.edges
 
   const pages = edges
     .filter(edge => edge.node.context.title)
-    .map(edge => edge.node.context)
+    .map(edge => ({ path: edge.node.path, ...edge.node.context }))
 
   return (
     <div>
@@ -25,10 +31,10 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          path
           layout
           context {
             title
-            path
             href
             soundcloudURL
           }

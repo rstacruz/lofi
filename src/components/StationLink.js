@@ -2,7 +2,14 @@ import React from 'react'
 import { navigateTo } from 'gatsby-link'
 
 export const StationLink = ({ path, title }) => (
-  <a href={path} className='StationLink' onClick={() => navigateTo(path)}>
+  <a
+    href={path}
+    className='StationLink'
+    onClick={evt => {
+      evt.preventDefault()
+      navigateTo(path)
+    }}
+  >
     <span className='title'>{title}</span>
 
     <style jsx>{`
