@@ -3,6 +3,7 @@ import { Subscribe } from 'unstated'
 import SoundcloudStore from '../stores/SoundcloudStore'
 import cn from 'classnames'
 import color from 'color'
+import Type from 'prop-types'
 
 export const INACTIVE_COLOR = '#fff'
 export const ACTIVE_COLOR = '#8fa'
@@ -114,6 +115,14 @@ export const MediaControlsView = ({
     `}</style>
   </div>
 )
+
+MediaControlsView.propTypes = {
+  onPlay: Type.func,
+  onPause: Type.func,
+  isPaused: Type.bool,
+  isPending: Type.bool,
+  isPlaying: Type.bool
+}
 
 /**
  * Connector

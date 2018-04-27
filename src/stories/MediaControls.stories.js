@@ -4,42 +4,34 @@ import { action } from '@storybook/addon-actions'
 import { withInfo } from '@storybook/addon-info'
 
 import { MediaControlsView } from '../components/MediaControls'
+import StoryHeading from '../components/StoryHeading'
 
-storiesOf('MediaControlsView', module)
-  .add(
-    'Full example',
-    withInfo({
-      text: `
-        The pause/play controls.
+storiesOf('MediaControlsView', module).add(
+  'Media Controls',
+  withInfo({})(() => (
+    <div>
+      <StoryHeading title='Working example' />
+      <Example>{props => <MediaControlsView {...props} />}</Example>
 
-        \`<MediaControls />\` hooks up to the \`SoundcloudStore\`, but the
-        \`MediaControlsView\` is pure-ish.
-      `
-    })(() => <Example>{props => <MediaControlsView {...props} />}</Example>)
-  )
-  .add(
-    'States',
-    withInfo({})(() => (
-      <div>
-        <h2>isPending</h2>
-        <MediaControlsView isPending />
+      <StoryHeading title='isPending' />
+      <MediaControlsView isPending />
 
-        <h2>isPlaying</h2>
-        <MediaControlsView
-          isPlaying
-          onPlay={action('onPlay')}
-          onPause={action('onPause')}
-        />
+      <StoryHeading title='isPlaying' />
+      <MediaControlsView
+        isPlaying
+        onPlay={action('onPlay')}
+        onPause={action('onPause')}
+      />
 
-        <h2>isPaused</h2>
-        <MediaControlsView
-          isPaused
-          onPlay={action('onPlay')}
-          onPause={action('onPause')}
-        />
-      </div>
-    ))
-  )
+      <StoryHeading title='isPaused' />
+      <MediaControlsView
+        isPaused
+        onPlay={action('onPlay')}
+        onPause={action('onPause')}
+      />
+    </div>
+  ))
+)
 
 /**
  * Example provider for `<MediaControlsView />`

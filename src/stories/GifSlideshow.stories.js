@@ -3,15 +3,17 @@ import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
 import GifSlideshow from '../components/GifSlideshow'
+import StoryHeading from '../components/StoryHeading'
 
 storiesOf('GifSlideshow', module).add(
-  'Full example',
+  'Slideshow',
   withInfo({
     text: `
         Gif slideshow.
       `
   })(() => (
-    <div style={{ width: '400px', height: '300px' }}>
+    <div style={{ width: '800px', height: '450px' }}>
+      <StoryHeading title='Slideshow' />
       <GifSlideshow />
     </div>
   ))
