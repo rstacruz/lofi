@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Rico Sta. Cruz <rstacruz@users.noreply.github.com>",
   "dependencies": {
+    "@storybook/addon-options": "^3.4.2",
     "babel-eslint": "8",
     "classnames": "^2.2.5",
     "color": "^3.0.0",

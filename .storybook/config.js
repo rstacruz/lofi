@@ -1,13 +1,23 @@
 import React from 'react'
 import { configure, addDecorator } from '@storybook/react'
-import { setDefaults } from '@storybook/addon-info'
+import { setOptions } from '@storybook/addon-options'
 import Container from './Container'
+
+/*
+ * Wrap all examples
+ */
 
 addDecorator(story => <Container story={story} />)
 
-setDefaults({
-  // header: false,
-  // inline: true
+/*
+ * Options
+ * See: https://github.com/storybooks/storybook/tree/master/addons/options
+ */
+
+setOptions({
+  name: 'Lofi Storybook',
+  showAddonPanel: false,
+  hierarchySeparator: /\//
 })
 
 /*
