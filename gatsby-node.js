@@ -36,6 +36,10 @@ const PAGES = {
     href: 'https://soundcloud.com/jessinneijts/sets/timewriter-lazy-sundays',
     soundcloudURL: 'https://api.soundcloud.com/playlists/109759947'
   }
+  // '/deep-house-space': {
+  //   title: 'Deep House Space',
+  //   href: 'https://soundcloud.com/deephousespace/sets/deep-house'
+  // }
 }
 
 /**

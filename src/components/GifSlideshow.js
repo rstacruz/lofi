@@ -17,12 +17,12 @@ import GifSlide from '../components/GifSlide'
 export class GifSlideshow extends React.Component {
   constructor (props) {
     super(props)
-    const images = props.images || VARS.images
+    const images = shuffle(props.images)
 
     this.state = {
       images,
-      interval: props.interval || 15000,
-      index: props.index || Math.round(Math.random() * (images.length - 1))
+      interval: props.interval,
+      index: props.index
     }
   }
 
@@ -63,9 +63,34 @@ export class GifSlideshow extends React.Component {
 }
 
 GifSlideshow.propTypes = {
+  /** Number of milliseconds to linger on each slide. */
   interval: Type.number,
+
+  /** Array of image URL's. */
   images: Type.arrayOf(Type.string),
+
+  /** The image number to start with. If not given, it will choose a random one. */
   index: Type.number
+}
+
+GifSlideshow.defaultProps = {
+  interval: 15000,
+  images: VARS.images,
+  index: 0
+}
+
+/**
+ * Helper: shuffles an array.
+ *
+ * @param {Array<*>} array Array to be sorted
+ */
+
+function shuffle (array, n) {
+  if (n === 0) return array
+  return shuffle(
+    array.sort(() => Math.random() - 0.5),
+    typeof n === 'undefined' ? array.length : n - 1
+  )
 }
 
 /*

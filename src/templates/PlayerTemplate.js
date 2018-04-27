@@ -3,7 +3,6 @@ import React from 'react'
 import PlayerPage from '../components/PlayerPage'
 import { Subscribe } from 'unstated'
 import SoundcloudStore from '../stores/SoundcloudStore'
-import { getStations } from '../queries/all_stations'
 
 /*
  * Template for player pages
@@ -23,6 +22,13 @@ export const PlayerTemplate = props => {
     </Subscribe>
   )
 }
+
+/**
+ * Tells the SoundcloudStore to reset itself when this appears.
+ *
+ * If Soundcloud was previously playing and you navigate to a new station, we
+ * want to reset the state back from `state: 'PLAYING'` to `state: 'PENDING'`.
+ */
 
 class SoundcloudReseter extends React.Component {
   componentDidMount () {
