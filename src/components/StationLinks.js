@@ -92,7 +92,7 @@ export const StationLinksView = (
         border-top: solid 1px white;
         transform: rotate(45deg) translate3d(3px, 3px, 0);
         transition: transform 300ms ease-out, opacity 300ms linear;
-        opacity: 0.25;
+        opacity: 0.9;
       }
 
       .toggle.-opened::before {

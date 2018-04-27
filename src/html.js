@@ -40,20 +40,17 @@ module.exports = class HTML extends React.Component {
           <meta httpEquiv='x-ua-compatible' content='ie=edge' />
           <meta
             name='viewport'
-            content='width=device-width, initial-scale=1, shrink-to-fit=no'
+            content='width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no'
           />
 
           {/* Android */}
           <meta name='mobile-web-app-capable' content='yes' />
-          <meta name='theme-color' content='black' />
+          <meta name='theme-color' content='#1e1e24' />
 
           {/* Apple */}
           <meta name='apple-mobile-web-app-title' content='Lofi Beats' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
-          <meta
-            name='apple-mobile-web-app-status-bar-style'
-            content='default'
-          />
+          <meta name='apple-mobile-web-app-status-bar-style' content='black' />
 
           {headComponents}
           {css}
