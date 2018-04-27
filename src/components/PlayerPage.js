@@ -11,14 +11,18 @@ import { MediaPlayerView } from '../components/MediaPlayer'
 import GifSlideshow from '../components/GifSlideshow'
 import MediaControls from '../components/MediaControls'
 import PlayerHotkeys from '../components/PlayerHotkeys'
+import StationLinks from '../components/StationLinks'
 
 /*::
+  import type { Station } from '../types'
+
   export type ViewProps = {
     showSlideshow: boolean,
     showSoundcloud: boolean,
     soundcloudURL: string,
     dispatch: any,
     actions: any,
+    stations: Array<Station>,
     children: Array<React.Node>
   }
 
@@ -39,6 +43,7 @@ export const PlayerPageView = (
     soundcloudURL,
     dispatch,
     actions,
+    stations,
     children
   } /*: ViewProps */
 ) => (
@@ -56,6 +61,15 @@ export const PlayerPageView = (
           <GifSlideshow />
         </div>
       ) : null}
+
+      <div className='stations'>
+        <StationLinks
+          stations={[
+            { path: '/lofi-hiphop', title: 'Lofi Beats' },
+            { path: '/timewriter', title: 'Timewriter' }
+          ]}
+        />
+      </div>
 
       <div
         className={cn('soundcloud', {
@@ -102,6 +116,14 @@ export const PlayerPageView = (
         opacity: 0;
         z-index: -1;
         pointer-events: none;
+      }
+
+      .stations {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
       }
 
       .soundcloud.-visible {

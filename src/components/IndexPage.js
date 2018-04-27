@@ -3,11 +3,15 @@ import React from 'react'
 import StationLinks from './StationLinks'
 
 /*::
-  import type { PageList } from '../types'
+  import type { StationList } from '../types'
+
+  export type Props = {
+    stations: StationList
+  }
 */
 
-export const IndexPage = ({ pages } /*: { pages: PageList } */) => (
-  <StationLinks pages={pages} />
+export const IndexPage = ({ stations } /*: Props */) => (
+  <StationLinks stations={stations} isOpen />
 )
 
 export default IndexPage

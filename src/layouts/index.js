@@ -32,5 +32,19 @@ export const query = graphql`
         title
       }
     }
+    allSitePage {
+      edges {
+        node {
+          id
+          path
+          layout
+          context {
+            title
+            href
+            soundcloudURL
+          }
+        }
+      }
+    }
   }
 `

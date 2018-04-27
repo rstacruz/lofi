@@ -4,8 +4,6 @@ import Type from 'prop-types'
 import * as VARS from '../styles/variables'
 import GifSlide from '../components/GifSlide'
 
-const debug = require('debug')('app:GifSlideshow')
-
 /*::
   export type Props = {
     image: string
@@ -37,7 +35,6 @@ export class GifSlideshow extends React.Component {
     let { index, images } = this.state
     index += 1
     if (index >= images.length) index = 0
-    debug('nextImage()', index)
     this.setState({ index })
   }
 
@@ -61,7 +58,6 @@ export class GifSlideshow extends React.Component {
 
   render () {
     const image = this.getImage()
-    debug('render()', image)
     return <GifSlide image={image} />
   }
 }

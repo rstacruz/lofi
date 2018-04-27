@@ -1,19 +1,23 @@
+/* global graphql */
 import React from 'react'
 import PlayerPage from '../components/PlayerPage'
 import { Subscribe } from 'unstated'
 import SoundcloudStore from '../stores/SoundcloudStore'
+import { getStations } from '../queries/all_stations'
 
 /*
  * Template for player pages
  */
 
-export const PlayerTemplate = ({ pathContext: ctx }) => {
+export const PlayerTemplate = props => {
+  const { pathContext: ctx } = props
+
   // const { title, href, soundcloudURL } = ctx
   return (
     <Subscribe to={[SoundcloudStore]}>
       {soundcloud => (
         <SoundcloudReseter soundcloud={soundcloud}>
-          <PlayerPage {...ctx} />
+          <PlayerPage {...{ ...ctx, stations: [] }} />
         </SoundcloudReseter>
       )}
     </Subscribe>

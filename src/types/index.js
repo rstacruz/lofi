@@ -1,7 +1,7 @@
 /* @flow */
 
 /*::
-  export type Page = {
+  export type Station = {
     default?: boolean,
     path: string,
     title: string,
@@ -9,7 +9,7 @@
     soundcloudURL: string
   }
 
-  export type PageList = {
-    [string]: Page
+  export type StationList = {
+    [string]: Station
   }
 */

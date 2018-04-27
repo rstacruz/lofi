@@ -9,16 +9,21 @@ export const StationLink = ({ path, title }) => (
       <style jsx>{`
         .StationLink,
         .StationLink:visited {
-          color: #888;
+          color: #fff;
+          text-shadow: 0 1px 1px #0008;
           text-decoration: none;
           font-weight: bold;
           display: block;
           padding: 8px;
+          text-align: center;
+          border-radius: 3px;
         }
 
         .StationLink:hover,
         .StationLink:focus {
-          color: #fff;
+          outline: 0;
+          background: #fff1;
+      }
         }
       `}</style>
     </span>
