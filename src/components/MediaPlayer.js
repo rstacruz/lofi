@@ -118,6 +118,12 @@ export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
    */
 
   bindWidgetEvents = (widget, dispatch, SC) => {
+    // Can happen in development.
+    if (!widget) {
+      console.warn('Warning: Soundcloud widget not available')
+      return
+    }
+
     widget.bind(SC.Widget.Events.READY, () => {
       dispatch.setPlayerState('READY')
 
