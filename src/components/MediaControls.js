@@ -8,6 +8,8 @@ import Type from 'prop-types'
 export const INACTIVE_COLOR = '#fff'
 export const ACTIVE_COLOR = '#8fa'
 export const BACKGROUND_COLOR = '#111'
+export const HEIGHT = 20
+export const WIDTH = 40
 
 /**
  * Media controls
@@ -50,9 +52,9 @@ export const MediaControlsView = ({
 
       .button {
         border: 0;
-        width: 29px;
-        height: 16px;
-        border-radius: 12px;
+        width: ${WIDTH}px;
+        height: ${HEIGHT}px;
+        border-radius: ${HEIGHT}px;
         background-color: ${BACKGROUND_COLOR};
         box-shadow: 0 0 0 2px ${INACTIVE_COLOR};
         position: relative;
@@ -80,8 +82,8 @@ export const MediaControlsView = ({
       .peg::before {
         content: '';
         display: block;
-        width: 10px;
-        height: 10px;
+        width: ${HEIGHT - 6}px;
+        height: ${HEIGHT - 6}px;
         background-color: ${INACTIVE_COLOR};
         border-radius: 50%;
         transition: background-color 1200ms ease-out, box-shadow 1200ms ease-out;
@@ -95,7 +97,7 @@ export const MediaControlsView = ({
 
       /* (On) peg */
       .button.-pause .peg {
-        transform: translate3d(12px, 0, 0);
+        transform: translate3d(${WIDTH - HEIGHT}px, 0, 0);
       }
 
       .button.-pause .peg::before {

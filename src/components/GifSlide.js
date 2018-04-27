@@ -58,16 +58,6 @@ export const GifSlide = ({ image } /*: Props */) => (
         z-index: 2;
         background: linear-gradient(135deg, transparent 1px, ${VARS.gridBg} 2px)
           left top / ${VARS.gridSize} ${VARS.gridSize};
-        mix-blend-mode: normal;
-      }
-
-      .wash {
-        z-index: 2;
-        background: linear-gradient(
-          to bottom,
-          transparent 50%,
-          ${color('#000').fade(0.3)}
-        );
       }
 
       .loop {
