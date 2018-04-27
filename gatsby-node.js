@@ -39,6 +39,12 @@ const PAGES = {
     title: 'Mushroom Jazz',
     href: 'https://soundcloud.com/djmarkfarina/sets/mushroom-jazz-mixes',
     soundcloudURL: 'https://api.soundcloud.com/playlists/309781662'
+  },
+  '/morning-bliss': {
+    title: 'Morning Bliss',
+    href:
+      'https://soundcloud.com/user-876658341/sets/sunday-morning-kisses-and',
+    soundcloudURL: 'https://api.soundcloud.com/playlists/424032182'
   }
 }
 
