@@ -1,66 +1,70 @@
 {
   "assetsByChunkName": {
     "path---morning-bliss": [
-      "path---morning-bliss-1524849669037-26b244f176081eacc9d3.js",
-      "path---morning-bliss-1524849669037-26b244f176081eacc9d3.js.map"
+      "path---morning-bliss-1524864851636-dc926c078af65a0c1b4a.js",
+      "path---morning-bliss-1524864851636-dc926c078af65a0c1b4a.js.map"
     ],
     "path---": [
-      "path----1524849669037-8c7c4b753554e55161ab.js",
-      "path----1524849669037-8c7c4b753554e55161ab.js.map"
+      "path----1524864851636-479bd0969c1703f92fdc.js",
+      "path----1524864851636-479bd0969c1703f92fdc.js.map"
     ],
     "component---src-templates-player-template-js": [
-      "component---src-templates-player-template-js-1524849669037-047e6a838b8019dc4734.js",
-      "component---src-templates-player-template-js-1524849669037-047e6a838b8019dc4734.js.map"
+      "component---src-templates-player-template-js-1524864851636-73b53b524316c5321c27.js",
+      "component---src-templates-player-template-js-1524864851636-73b53b524316c5321c27.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-1524849669037-05945e38d47fb4aba6cd.js",
-      "component---src-layouts-index-js-1524849669037-05945e38d47fb4aba6cd.js.map"
+      "component---src-layouts-index-js-1524864851636-2735a9bda0bf9f07527c.js",
+      "component---src-layouts-index-js-1524864851636-2735a9bda0bf9f07527c.js.map"
     ],
     "path---index": [
-      "path---index-1524849669037-d54ba2bb8a9fbd1dadc5.js",
-      "path---index-1524849669037-d54ba2bb8a9fbd1dadc5.js.map"
+      "path---index-1524864851636-6e7030fc66778a3727cc.js",
+      "path---index-1524864851636-6e7030fc66778a3727cc.js.map"
     ],
     "path---list": [
-      "path---list-1524849669037-9f1a85b708f0b7881dd4.js",
-      "path---list-1524849669037-9f1a85b708f0b7881dd4.js.map"
+      "path---list-1524864851636-6126d2141524ec9e8d77.js",
+      "path---list-1524864851636-6126d2141524ec9e8d77.js.map"
     ],
     "component---src-pages-404-js": [
-      "component---src-pages-404-js-1524849669037-4503918ea3a16cfcdb75.js",
-      "component---src-pages-404-js-1524849669037-4503918ea3a16cfcdb75.js.map"
+      "component---src-pages-404-js-1524864851636-4503918ea3a16cfcdb75.js",
+      "component---src-pages-404-js-1524864851636-4503918ea3a16cfcdb75.js.map"
     ],
     "commons": [
-      "commons-1524849669037-d8806f5782cd0c02421e.js",
-      "commons-1524849669037-d8806f5782cd0c02421e.js.map"
+      "commons-1524864851636-d8806f5782cd0c02421e.js",
+      "commons-1524864851636-d8806f5782cd0c02421e.js.map"
     ],
     "path---404-html": [
-      "path---404-html-1524849669037-a0e39f21c11f6a62c5ab.js",
-      "path---404-html-1524849669037-a0e39f21c11f6a62c5ab.js.map"
+      "path---404-html-1524864851636-a0e39f21c11f6a62c5ab.js",
+      "path---404-html-1524864851636-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-list-js": [
-      "component---src-pages-list-js-1524849669037-f9f90bc0aa849e02fac2.js",
-      "component---src-pages-list-js-1524849669037-f9f90bc0aa849e02fac2.js.map"
+      "component---src-pages-list-js-1524864851636-f9f90bc0aa849e02fac2.js",
+      "component---src-pages-list-js-1524864851636-f9f90bc0aa849e02fac2.js.map"
     ],
     "path---lofi-hiphop": [
-      "path---lofi-hiphop-1524849669037-d54ba2bb8a9fbd1dadc5.js",
-      "path---lofi-hiphop-1524849669037-d54ba2bb8a9fbd1dadc5.js.map"
+      "path---lofi-hiphop-1524864851636-6e7030fc66778a3727cc.js",
+      "path---lofi-hiphop-1524864851636-6e7030fc66778a3727cc.js.map"
     ],
     "app": [
-      "app-1524849669037-8316a731a8e26308e506.js",
+      "app-1524864851636-065bb6ab90ce3bcadc25.js",
       "build-js-styles.css",
-      "app-1524849669037-8316a731a8e26308e506.js.map",
+      "app-1524864851636-065bb6ab90ce3bcadc25.js.map",
       "build-js-styles.css.map"
     ],
     "path---timewriter": [
-      "path---timewriter-1524849669037-669ba806ca237093ee2d.js",
-      "path---timewriter-1524849669037-669ba806ca237093ee2d.js.map"
+      "path---timewriter-1524864851636-fb9c4820b8fd4406a54d.js",
+      "path---timewriter-1524864851636-fb9c4820b8fd4406a54d.js.map"
+    ],
+    "path---worldwide-fm": [
+      "path---worldwide-fm-1524864851636-0592957a0028009862a7.js",
+      "path---worldwide-fm-1524864851636-0592957a0028009862a7.js.map"
     ],
     "path---404": [
-      "path---404-1524849669037-a0e39f21c11f6a62c5ab.js",
-      "path---404-1524849669037-a0e39f21c11f6a62c5ab.js.map"
+      "path---404-1524864851636-a0e39f21c11f6a62c5ab.js",
+      "path---404-1524864851636-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---mushroom-jazz": [
-      "path---mushroom-jazz-1524849669037-669c1f62086387be5e74.js",
-      "path---mushroom-jazz-1524849669037-669c1f62086387be5e74.js.map"
+      "path---mushroom-jazz-1524864851636-beec89ad7c3ce34b22e3.js",
+      "path---mushroom-jazz-1524864851636-beec89ad7c3ce34b22e3.js.map"
     ]
   }
 }
