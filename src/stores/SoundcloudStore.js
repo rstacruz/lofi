@@ -1,4 +1,5 @@
 import { Container } from 'unstated'
+const debug = require('debug')('app:SoundcloudStore')
 
 /**
  * Store
@@ -17,15 +18,11 @@ export default class SoundcloudStore extends Container {
 
   setPlayerState (state) {
     if (this.state.state === state) {
-      console.log(
-        '[SoundcloudStore] setPlayerState():',
-        'Discarding conguent state',
-        state
-      )
+      debug('setPlayerState() ERR: Discarding conguent state', state)
       return
     }
 
-    console.log('[SoundcloudStore] setPlayerState():', state)
+    debug('setPlayerState() OK:', state)
     this.setState({ state })
   }
 
@@ -35,20 +32,11 @@ export default class SoundcloudStore extends Container {
 
   setSound (sound) {
     if (JSON.stringify(sound) === JSON.stringify(this.state.sound)) {
-      console.log(
-        '[SoundcloudStore] setSound():',
-        'Discarding congruent sound',
-        sound
-      )
+      debug('setSound() ERR: Discarding congruent sound', sound)
       return
     }
 
-    console.log(
-      '[SoundcloudStore] setSound()',
-      sound.user && sound.user.username,
-      '-',
-      sound.title
-    )
+    debug('setSound() OK:', sound.user && sound.user.username, '-', sound.title)
 
     this.setState({ sound })
     // csound.permalink_url
