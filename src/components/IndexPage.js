@@ -3,10 +3,10 @@ import React from 'react'
 import StationLinks from './StationLinks'
 
 /*::
-  import type { StationList } from '../types'
+  import type { StationPage } from '../types'
 
   export type Props = {
-    stations: StationList
+    stations: Array<StationPage>
   }
 */
 

@@ -1,6 +1,6 @@
 /* @flow */
 
-import React from 'react'
+import * as React from 'react'
 import { Subscribe } from 'unstated'
 import cn from 'classnames'
 import Helmet from 'react-helmet'
@@ -14,7 +14,7 @@ import PlayerHotkeys from '../components/PlayerHotkeys'
 import StationLinks from '../components/StationLinks'
 
 /*::
-  import type { Station } from '../types'
+  import type { StationPage } from '../types'
 
   export type ViewProps = {
     showSlideshow: boolean,
@@ -22,14 +22,14 @@ import StationLinks from '../components/StationLinks'
     soundcloudURL: string,
     dispatch: any,
     actions: any,
-    stations: Array<Station>,
-    children: Array<React.Node>
+    stations: Array<StationPage>,
+    children: React.Node
   }
 
   export type Props = {
     soundcloudURL: string,
     title: string,
-    stations: Array<Station>
+    stations: Array<StationPage>
   }
 */
 

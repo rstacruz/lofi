@@ -38,17 +38,22 @@
     "lint": "eslint src/ lib/",
     "develop": "rm -rf .cache public && gatsby develop -H 0.0.0.0",
     "develop:local": "rm -rf .cache public && gatsby develop",
+    "flow": "flow",
     "format": "prettier-eslint --write 'src/**/*.js' 'lib/**/*.js'",
-    "format:list": "prettier-eslint --list-different 'src/**/*.js' 'lib/**/*.js'",
+    "format:list":
+      "prettier-eslint --list-different 'src/**/*.js' 'lib/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "deploy": "rm -rf .cache public && gatsby build --prefix-paths && build-storybook -c .storybook -o public/storybook && gh-pages -d public",
-    "deploy:safe": "rm -rf .cache public && gatsby build --prefix-paths && gh-pages -d public"
+    "deploy":
+      "rm -rf .cache public && gatsby build --prefix-paths && build-storybook -c .storybook -o public/storybook && gh-pages -d public",
+    "deploy:safe":
+      "rm -rf .cache public && gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
     "@storybook/addon-info": "^3.4.2",
     "@storybook/react": "^3.4.2",
     "babel-loader": "7.1.1",
+    "flow-bin": "^0.71.0",
     "gh-pages": "^1.1.0",
     "prettier": "^1.12.0",
     "prettier-eslint-cli": "^4.7.1"

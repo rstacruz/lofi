@@ -7,7 +7,7 @@ import GifSlide from '../components/GifSlide'
 /*::
   export type Props = {
     interval: number,
-    images: Array<string>,
+    images: ?Array<string>,
     index: number,
     imageset: ?string,
     visible: boolean
@@ -25,7 +25,20 @@ import GifSlide from '../components/GifSlide'
  */
 
 export class GifSlideshow extends React.Component /*:: <Props, State> */ {
-  constructor (props) {
+  /*::
+    // Timeout for timer
+    timer: ?TimeoutID
+  */
+
+  static defaultProps /*: Props */ = {
+    interval: 15000,
+    images: null,
+    imageset: 'aesthetic',
+    index: 0,
+    visible: true
+  }
+
+  constructor (props /*: Props */) {
     super(props)
 
     // Get images and shuffle them
@@ -33,6 +46,7 @@ export class GifSlideshow extends React.Component /*:: <Props, State> */ {
       (props.images ? props.images : IMAGES[props.imageset]) || []
     const images = shuffle(rawImages)
 
+    // TODO: Implement this as getDerivedStateFromProps
     this.state = {
       images,
       interval: props.interval,
@@ -70,7 +84,7 @@ export class GifSlideshow extends React.Component /*:: <Props, State> */ {
   }
 
   componentWillUnmount () {
-    clearTimeout(this.timer)
+    if (this.timer) clearTimeout(this.timer)
     this.timer = undefined
   }
 
@@ -90,14 +104,6 @@ export class GifSlideshow extends React.Component /*:: <Props, State> */ {
 
     return <GifSlide {...{ image, preload, visible }} />
   }
-}
-
-GifSlideshow.defaultProps = {
-  interval: 15000,
-  images: null,
-  imageset: 'aesthetic',
-  index: 0,
-  visible: true
 }
 
 /**
