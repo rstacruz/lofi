@@ -48,11 +48,11 @@ export const lofi = [
 export const aesthetic = [
   // Pink road
   // https://giphy.com/gifs/90s-vaporwave-vhs-gif-58dEMJQAn2SfC
-  'https://media.giphy.com/media/58dEMJQAn2SfC/giphy.gif',
+  // 'https://media.giphy.com/media/58dEMJQAn2SfC/giphy.gif',
 
   // Tokyo rain
   // https://giphy.com/gifs/aesthetic-uBTWyINWTrWz6
-  'https://media.giphy.com/media/uBTWyINWTrWz6/giphy.gif',
+  // 'https://media.giphy.com/media/uBTWyINWTrWz6/giphy.gif',
 
   // Space triangle
   // https://giphy.com/gifs/3d-vhs-after-effects-zlVy2qTOIoysM
@@ -104,5 +104,45 @@ export const aesthetic = [
 
   // Future cop
   // http://gph.is/206EHOT
-  'https://media.giphy.com/media/hSoemM5UuJR1S/giphy.gif'
+  'https://media.giphy.com/media/hSoemM5UuJR1S/giphy.gif',
+
+  // Skateboard
+  // http://gph.is/1IVDaSB
+  'https://media.giphy.com/media/xTiTnD4d66fshHzTxK/giphy.gif',
+
+  // Glitch flipphone
+  // http://gph.is/1OUZvis
+  'https://media.giphy.com/media/l41lO0QvEQ8kjaIko/giphy.gif',
+
+  // Music note
+  // https://giphy.com/gifs/90s-glitch-3d-l0IykENmwKDa1qCaY
+  'https://media.giphy.com/media/l0IykENmwKDa1qCaY/giphy.gif',
+
+  // 80's trees
+  // http://gph.is/1hGhEpq
+  'https://media.giphy.com/media/7twRA3tODfwt2/giphy.gif',
+
+  // Need for speed
+  // http://gph.is/2lCPfXP
+  'https://media.giphy.com/media/3o6YglHGRqkaf1DAkw/giphy.gif',
+
+  // Kung fury grid
+  // http://gph.is/1GhrwRA
+  'https://media.giphy.com/media/Bpqp2E59wkaOY/giphy.gif',
+
+  // 80's beach
+  // http://gph.is/2EkVmZN
+  'https://media.giphy.com/media/l0NgS8vCMk2ewa5iw/giphy.gif',
+
+  // Soda sip
+  // http://gph.is/1Tva4tK
+  'https://media.giphy.com/media/jobZpJ2vUWRdS/giphy.gif',
+
+  // VHS sunset
+  // http://gph.is/1JayjL1
+  'https://media.giphy.com/media/ijhLl5UuE7yec/giphy.gif',
+
+  // CU soon
+  // http://gph.is/1SvEcJU
+  'https://media.giphy.com/media/IdXAygIFzYceY/giphy.gif'
 ]
