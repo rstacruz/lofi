@@ -1,8 +1,7 @@
 /* @flow */
 import React from 'react'
-import Type from 'prop-types'
 
-import * as VARS from '../styles/variables'
+import * as IMAGES from '../data/images'
 import GifSlide from '../components/GifSlide'
 
 /*::
@@ -10,6 +9,7 @@ import GifSlide from '../components/GifSlide'
     interval: number,
     images: Array<string>,
     index: number,
+    imageset: ?string,
     visible: boolean
   }
 
@@ -27,7 +27,8 @@ import GifSlide from '../components/GifSlide'
 export class GifSlideshow extends React.Component /*:: <Props, State> */ {
   constructor (props) {
     super(props)
-    const images = shuffle(props.images)
+    const rawImages = props.images ? props.images : IMAGES[props.imageset]
+    const images = shuffle(rawImages)
 
     this.state = {
       images,
@@ -88,20 +89,10 @@ export class GifSlideshow extends React.Component /*:: <Props, State> */ {
   }
 }
 
-GifSlideshow.propTypes = {
-  /** Number of milliseconds to linger on each slide. */
-  interval: Type.number,
-
-  /** Array of image URL's. */
-  images: Type.arrayOf(Type.string),
-
-  /** The image number to start with. If not given, it will choose a random one. */
-  index: Type.number
-}
-
 GifSlideshow.defaultProps = {
   interval: 15000,
-  images: VARS.images,
+  images: null,
+  imageset: 'lofi',
   index: 0,
   visible: true
 }
