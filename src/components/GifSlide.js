@@ -78,6 +78,7 @@ export const GifSlide = ({ image, preload, visible } /*: Props */) => (
         background-size: ${VARS.gridSize} ${VARS.gridSize};
         background-position: left top;
         background-repeat: repeat;
+        opacity: 0.5;
       }
 
       .loop {
