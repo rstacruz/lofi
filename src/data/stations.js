@@ -29,7 +29,7 @@ const STATIONS /*: StationList */ = {
     group: 'lofi',
     href: 'https://soundcloud.com/user-231461939/sets/kaimyros-vaporwave-mix',
     soundcloudURL: 'https://api.soundcloud.com/playlists/335930552'
-  }
+  },
   // '/timewriter': {
   //   title: 'Lazy Sundays',
   //   genre: 'Tech House',
@@ -42,14 +42,14 @@ const STATIONS /*: StationList */ = {
   //   href: 'https://soundcloud.com/djmarkfarina/sets/mushroom-jazz-mixes',
   //   soundcloudURL: 'https://api.soundcloud.com/playlists/309781662'
   // },
-  // '/morning-bliss': {
-  //   title: 'Morning Bliss',
-  //   genre: 'Indie',
-  //   group: 'electronic',
-  //   href:
-  //     'https://soundcloud.com/user-876658341/sets/sunday-morning-kisses-and',
-  //   soundcloudURL: 'https://api.soundcloud.com/playlists/424032182'
-  // },
+  '/morning-bliss': {
+    title: 'Morning Bliss',
+    genre: 'Indie',
+    group: 'electronic',
+    href:
+      'https://soundcloud.com/user-876658341/sets/sunday-morning-kisses-and',
+    soundcloudURL: 'https://api.soundcloud.com/playlists/424032182'
+  }
   // '/worldwide-fm': {
   //   title: 'Worldwide FM',
   //   genre: 'Electronic',
