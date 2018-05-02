@@ -27,7 +27,10 @@ import GifSlide from '../components/GifSlide'
 export class GifSlideshow extends React.Component /*:: <Props, State> */ {
   constructor (props) {
     super(props)
-    const rawImages = props.images ? props.images : IMAGES[props.imageset]
+
+    // Get images and shuffle them
+    const rawImages =
+      (props.images ? props.images : IMAGES[props.imageset]) || []
     const images = shuffle(rawImages)
 
     this.state = {
@@ -92,7 +95,7 @@ export class GifSlideshow extends React.Component /*:: <Props, State> */ {
 GifSlideshow.defaultProps = {
   interval: 15000,
   images: null,
-  imageset: 'lofi',
+  imageset: 'aesthetic',
   index: 0,
   visible: true
 }

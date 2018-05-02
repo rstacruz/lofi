@@ -50,10 +50,6 @@ export const aesthetic = [
   // https://giphy.com/gifs/90s-vaporwave-vhs-gif-58dEMJQAn2SfC
   'https://media.giphy.com/media/58dEMJQAn2SfC/giphy.gif',
 
-  // Glitch
-  // https://giphy.com/gifs/art-glitch-3o6vXYz8QGLxQ6Umbu
-  'https://media.giphy.com/media/3o6vXYz8QGLxQ6Umbu/giphy.gif',
-
   // Tokyo rain
   // https://giphy.com/gifs/aesthetic-uBTWyINWTrWz6
   'https://media.giphy.com/media/uBTWyINWTrWz6/giphy.gif',
@@ -68,5 +64,45 @@ export const aesthetic = [
 
   // Adjust tracking
   // https://giphy.com/gifs/glitch-vhs-max-capacity-yugSj8GSC0wXm
-  'https://media.giphy.com/media/yugSj8GSC0wXm/giphy.gif'
+  'https://media.giphy.com/media/yugSj8GSC0wXm/giphy.gif',
+
+  // Pool party
+  // https://giphy.com/gifs/bastian-berne-fUBbxS4oLW0IU
+  'https://media.giphy.com/media/fUBbxS4oLW0IU/giphy.gif',
+
+  // LA palm trees
+  // https://giphy.com/gifs/vintage-vhs-Z69UDgjfRMjsY
+  'https://media.giphy.com/media/Z69UDgjfRMjsY/giphy.gif',
+
+  // 90s dancing
+  // https://giphy.com/gifs/vintage-90s-SwjZP4UxSrDVK
+  'https://media.giphy.com/media/SwjZP4UxSrDVK/giphy.gif',
+
+  // Bubble gum
+  // https://giphy.com/gifs/90s-vintage-c79CePg8do6qc
+  'https://media.giphy.com/media/c79CePg8do6qc/giphy.gif',
+
+  // La Toya Jackson
+  // http://gph.is/1KJC7U8
+  'https://media.giphy.com/media/CUpS7AQEOEGXK/giphy.gif',
+
+  // Weight watches idk
+  // http://gph.is/1bTzeng
+  'https://media.giphy.com/media/TZZzHBGrlStSU/giphy.gif',
+
+  // Sculpture
+  // http://gph.is/1LKp1YO
+  'https://media.giphy.com/media/4xB2FgW1eHIL6/giphy.gif',
+
+  // 1981
+  // http://gph.is/1URPt2N
+  'https://media.giphy.com/media/JO83DevQc6Suk/giphy.gif',
+
+  // Mousse
+  // http://gph.is/1MUAseT
+  'https://media.giphy.com/media/wp7uH13Iby6as/giphy.gif',
+
+  // Future cop
+  // http://gph.is/206EHOT
+  'https://media.giphy.com/media/hSoemM5UuJR1S/giphy.gif'
 ]
