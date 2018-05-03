@@ -144,5 +144,21 @@ export const aesthetic = [
 
   // CU soon
   // http://gph.is/1SvEcJU
-  'https://media.giphy.com/media/IdXAygIFzYceY/giphy.gif'
+  'https://media.giphy.com/media/IdXAygIFzYceY/giphy.gif',
+
+  // Welcome to miami
+  // http://gph.is/1MiLHzD
+  'https://media.giphy.com/media/s01FCGJpDfkU8/giphy.gif',
+
+  // Sun ripples
+  // http://gph.is/2vvtkDb
+  'https://media.giphy.com/media/xT9IglBTX4JAsRHH9K/giphy.gif',
+
+  // Color bars Glitch
+  // http://gph.is/2lhr4LA
+  'https://media.giphy.com/media/3o6Yg9EEV1IeLRd3Xy/giphy.gif',
+
+  // Glow cubes
+  // http://gph.is/1Zd9h3F
+  'https://media.giphy.com/media/yHWnaQf2q68sE/giphy.gif'
 ]
