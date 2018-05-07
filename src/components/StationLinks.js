@@ -4,32 +4,41 @@ import cn from 'classnames'
 
 import StationLink from './StationLink'
 
-/*::
-  import type { StationPage } from '../types/index'
+import type { StationPage } from '../types/index'
 
-  export type Props = {
-    stations: Array<StationPage>,
-    isOpen?: boolean
-  }
+/*
+ * Types
+ */
 
-  export type State = {
-    isOpen: boolean
-  }
+export type Props = {
+  stations: Array<StationPage>,
+  isOpen?: boolean
+}
 
-  export type ViewProps = {
-    stations: Array<StationPage>,
-    isOpen: boolean,
-    onOpen: () => void,
-    onClose: () => void
-  }
-*/
+export type State = {
+  isOpen: boolean
+}
 
-export const StationLinksView = (
-  { stations, isOpen, onOpen, onClose } /*: ViewProps */
-) => (
+export type ViewProps = {
+  stations: Array<StationPage>,
+  isOpen: boolean,
+  onOpen: () => void,
+  onClose: () => void
+}
+
+/**
+ * Station Links View
+ */
+
+export const StationLinksView = ({
+  stations,
+  isOpen,
+  onOpen,
+  onClose
+}: ViewProps) => (
   <div className='StationLinks'>
     <div className={cn('list', { '-opened': isOpen, '-closed': !isOpen })}>
-      {stations.map(({ path, title } /*: StationPage */) => (
+      {stations.map(({ path, title }: StationPage) => (
         <StationLink key={path} {...{ path, title }} />
       ))}
     </div>
@@ -107,8 +116,8 @@ export const StationLinksView = (
  * Connector component
  */
 
-export class StationLinks extends React.Component /*:: <Props, State> */ {
-  constructor (props /*: Props */) {
+export class StationLinks extends React.Component<Props, State> {
+  constructor (props: Props) {
     super(props)
     this.state = {
       isOpen: 'isOpen' in props ? props.isOpen || false : false

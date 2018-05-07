@@ -1,4 +1,5 @@
 /* @flow */
+/* eslint-disable react/no-unused-prop-types */
 import React from 'react'
 import qs from 'qs'
 import { Subscribe } from 'unstated'
@@ -6,26 +7,28 @@ import { Subscribe } from 'unstated'
 import getSoundcloud from '../../lib/soundcloud'
 import SoundcloudStore from '../stores/SoundcloudStore'
 
-/*::
-  import type { Action, SoundcloudAPI, SoundcloudWidget } from '../types'
+import type { Action, SoundcloudAPI, SoundcloudWidget } from '../types'
 
-  export type Props = {|
-    url: string,
-    actions: Array<Action>,
-    dispatch: any
-  |}
+/*
+ * Types
+ */
 
-  export type State = {
-    SC?: SoundcloudAPI,
-    widget?: SoundcloudWidget
-  }
+export type Props = {|
+  url: string,
+  actions: Array<Action>,
+  dispatch: any
+|}
 
-  export type ViewProps = {|
-    url: string,
-    dispatch: any,
-    actions: any
-  |}
-*/
+export type State = {
+  SC?: SoundcloudAPI,
+  widget?: SoundcloudWidget
+}
+
+export type ViewProps = {|
+  url: string,
+  dispatch: any,
+  actions: any
+|}
 
 const debug = require('debug')('app:MediaPlayer')
 
@@ -35,12 +38,10 @@ const debug = require('debug')('app:MediaPlayer')
  * See: https://developers.soundcloud.com/docs/api/html5-widget
  */
 
-export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
-  state /*: State */ = {}
+export class MediaPlayerView extends React.Component<Props, State> {
+  state: State = {}
 
-  /*::
-    iframe: ?Node
-  */
+  iframe: ?global.Node
 
   render () {
     const { SC } = this.state
@@ -92,7 +93,7 @@ export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
    */
 
   /* eslint-disable camelcase */
-  UNSAFE_componentWillReceiveProps (next /*: Props */) {
+  UNSAFE_componentWillReceiveProps (next: Props) {
     // If no widget, die
     const { widget } = this.state
     if (!widget) return
@@ -117,7 +118,7 @@ export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
    * Initializes the `<iframe />`.
    */
 
-  refIframe = (el /*: ?Node */) => {
+  refIframe = (el: ?global.Node) => {
     this.iframe = el
 
     const { widget, SC } = this.getAPI()
@@ -134,9 +135,9 @@ export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
    */
 
   bindWidgetEvents = (
-    widget /*: SoundcloudWidget */,
-    dispatch /*: any */,
-    SC /*: SoundcloudAPI */
+    widget: SoundcloudWidget,
+    dispatch: any,
+    SC: SoundcloudAPI
   ) => {
     // Can happen in development.
     if (!widget) {
@@ -205,7 +206,7 @@ export class MediaPlayerView extends React.Component /*:: <Props, State> */ {
  * Place this anywhere in your DOM tree. It listens to Soundcloud store.
  */
 
-export const MediaPlayer = ({ url } /*: Props */) => {
+export const MediaPlayer = ({ url }: Props) => {
   return (
     <Subscribe to={[SoundcloudStore]}>
       {soundcloud => (

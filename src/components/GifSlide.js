@@ -1,18 +1,24 @@
+/* @flow */
 import React from 'react'
-import Type from 'prop-types'
 import cn from 'classnames'
 
 import * as VARS from '../styles/variables'
 
-/*::
-  export type Props = {
-    image: string,
-    preload: Array<string>,
-    visible: boolean
-  }
-*/
+/*
+ * Types
+ */
 
-export const GifSlide = ({ image, preload, visible } /*: Props */) => (
+export type Props = {
+  image: string,
+  preload: Array<string>,
+  visible: boolean
+}
+
+/**
+ * A GIF slide.
+ */
+
+export const GifSlide = ({ image, preload, visible }: Props) => (
   <div className={cn('GifSlide', { '-hidden': !visible, '-visible': visible })}>
     {/* Looping image */}
     <span
@@ -110,10 +116,6 @@ export const GifSlide = ({ image, preload, visible } /*: Props */) => (
     `}</style>
   </div>
 )
-
-GifSlide.propTypes = {
-  image: Type.string
-}
 
 /*
  * Default export

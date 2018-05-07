@@ -1,5 +1,5 @@
 /* @flow */
-import React from 'react'
+import React, { Component } from 'react'
 
 import * as IMAGES from '../data/images'
 import GifSlide from '../components/GifSlide'
@@ -8,25 +8,25 @@ import GifSlide from '../components/GifSlide'
  * Types
  */
 
-export type Props = {
+export type Props = {|
   interval: number,
   images: ?Array<string>,
   index: number,
   imageset: ?string,
   visible: boolean
-}
+|}
 
-export type State = {
+export type State = {|
   interval: number,
   images: Array<string>,
   index: number
-}
+|}
 
 /*
  * Slideshow
  */
 
-export class GifSlideshow extends React.Component<Props, State> {
+export class GifSlideshow extends Component<Props, State> {
   // Timeout for timer
   timer: ?global.TimeoutID
 

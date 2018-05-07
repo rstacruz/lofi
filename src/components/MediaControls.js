@@ -1,4 +1,5 @@
-import React from 'react'
+/* @flow */
+import * as React from 'react'
 import { Subscribe } from 'unstated'
 import SoundcloudStore from '../stores/SoundcloudStore'
 import cn from 'classnames'
@@ -11,6 +12,18 @@ export const BACKGROUND_COLOR = '#1e1e24'
 export const HEIGHT = 20
 export const WIDTH = 40
 
+/*
+ * Types
+ */
+
+export type ViewProps = {|
+  onPlay: () => void,
+  onPause: () => void,
+  isPaused: boolean,
+  isPending: boolean,
+  isPlaying: boolean
+|}
+
 /**
  * Media controls
  */
@@ -21,7 +34,7 @@ export const MediaControlsView = ({
   isPaused,
   isPending,
   isPlaying
-}) => (
+}: ViewProps) => (
   <div className='MediaControls'>
     {isPending ? <span className='loading'>Loading...</span> : null}
     {isPaused || isPlaying ? (
@@ -156,7 +169,7 @@ MediaControlsView.propTypes = {
  * Connector
  */
 
-export const connect = View => () => (
+export const connect = (View: ViewProps => React.Node) => () => (
   <Subscribe to={[SoundcloudStore]}>
     {soundcloud => (
       <View
