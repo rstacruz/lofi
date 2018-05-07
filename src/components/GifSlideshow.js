@@ -4,33 +4,33 @@ import React from 'react'
 import * as IMAGES from '../data/images'
 import GifSlide from '../components/GifSlide'
 
-/*::
-  export type Props = {
-    interval: number,
-    images: ?Array<string>,
-    index: number,
-    imageset: ?string,
-    visible: boolean
-  }
+/*
+ * Types
+ */
 
-  export type State = {
-   interval: number,
-   images: Array<string>,
-   index: number
-  }
-*/
+export type Props = {
+  interval: number,
+  images: ?Array<string>,
+  index: number,
+  imageset: ?string,
+  visible: boolean
+}
+
+export type State = {
+  interval: number,
+  images: Array<string>,
+  index: number
+}
 
 /*
  * Slideshow
  */
 
-export class GifSlideshow extends React.Component /*:: <Props, State> */ {
-  /*::
-    // Timeout for timer
-    timer: ?TimeoutID
-  */
+export class GifSlideshow extends React.Component<Props, State> {
+  // Timeout for timer
+  timer: ?global.TimeoutID
 
-  static defaultProps /*: Props */ = {
+  static defaultProps: Props = {
     interval: 15000,
     images: null,
     imageset: 'aesthetic',
@@ -38,7 +38,7 @@ export class GifSlideshow extends React.Component /*:: <Props, State> */ {
     visible: true
   }
 
-  constructor (props /*: Props */) {
+  constructor (props: Props) {
     super(props)
 
     // Get images and shuffle them
