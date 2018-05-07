@@ -45,9 +45,15 @@ export class GifSlideshow extends React.Component<Props, State> {
   constructor (props: Props) {
     super(props)
 
+    const { imageset } = props
+
     // Get images and shuffle them
-    const rawImages =
-      (props.images ? props.images : IMAGES[props.imageset]) || []
+    const rawImages: Array<string> = props.images
+      ? props.images
+      : imageset && IMAGES.hasOwnProperty(imageset)
+        ? IMAGES[imageset]
+        : []
+
     const images = shuffle(rawImages)
 
     // TODO: Implement this as getDerivedStateFromProps

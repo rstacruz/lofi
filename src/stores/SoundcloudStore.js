@@ -1,11 +1,23 @@
+/* @flow */
 import { Container } from 'unstated'
+import type { Action, SoundcloudSound } from '../types'
+
 const debug = require('debug')('app:SoundcloudStore')
+
+export type Status = 'PENDING' | 'READY' | 'PLAYING' | 'PAUSED'
+
+export type State = {
+  state: Status,
+  sounds: ?Array<SoundcloudSound>,
+  sound: ?SoundcloudSound,
+  actions: Array<Action>
+}
 
 /**
  * Store
  */
 
-export default class SoundcloudStore extends Container {
+export default class SoundcloudStore extends Container<State> {
   state = {
     state: 'PENDING', // 'READY' | 'PLAYING' | 'PAUSED'
     // The playlist
@@ -20,7 +32,7 @@ export default class SoundcloudStore extends Container {
     this.setState({ state: 'PENDING', sounds: null, sound: null, actions: [] })
   }
 
-  setPlayerState (state) {
+  setPlayerState (state: Status) {
     if (this.state.state === state) {
       debug('setPlayerState() ERR: Discarding conguent state', state)
       return
@@ -30,11 +42,11 @@ export default class SoundcloudStore extends Container {
     this.setState({ state })
   }
 
-  setSounds (sounds) {
+  setSounds (sounds: Array<SoundcloudSound>) {
     this.setState({ sounds })
   }
 
-  setSound (sound) {
+  setSound (sound: SoundcloudSound) {
     if (JSON.stringify(sound) === JSON.stringify(this.state.sound)) {
       debug('setSound() ERR: Discarding congruent sound', sound)
       return

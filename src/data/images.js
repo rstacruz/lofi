@@ -1,3 +1,5 @@
+/* @flow */
+
 /*
  * Cinemagraph images for lofi.
  *
@@ -7,7 +9,7 @@
  * - https://leahberman.tumblr.com/
  */
 
-export const lofi = [
+export const lofi: Array<string> = [
   // Bike
   // https://juliendouvier.tumblr.com/post/163862485221#notes
   'https://78.media.tumblr.com/e9cc23ae98e67f6956880d4ca90a0052/tumblr_ou9eyoISBp1s85u2fo1_500.gif',
@@ -45,7 +47,7 @@ export const lofi = [
  * Vaporwave aesthetic images.
  */
 
-export const aesthetic = [
+export const aesthetic: Array<string> = [
   // Pink road
   // https://giphy.com/gifs/90s-vaporwave-vhs-gif-58dEMJQAn2SfC
   // 'https://media.giphy.com/media/58dEMJQAn2SfC/giphy.gif',
