@@ -20,12 +20,17 @@ setOptions({
   hierarchySeparator: /\//
 })
 
+function requireAll(r) {
+  r.keys().forEach(r)
+}
+
 /*
  * Load stories
  */
 
 function loadStories() {
-  require('../src/stories/index.js')
+  require('../src/layouts/css.js')
+  requireAll(require.context('../src', true, /\.stor(y|ies)\.jsx?$/))
 }
 
 configure(loadStories, module)
