@@ -33,6 +33,13 @@ export type Action = {
 // `window.SC`
 export type SoundcloudAPI = any
 
+export type SoundcloudSound = {
+  title: string,
+  user?: {
+    username: string
+  }
+}
+
 // The return of `SC.widget(iframe)`
 export type SoundcloudWidget = {
   play: () => void,
@@ -43,9 +50,12 @@ export type SoundcloudWidget = {
   getCurrentSound: ((?SoundcloudSound) => void) => void
 }
 
-export type SoundcloudSound = {
-  title: string,
-  user?: {
-    username: string
-  }
+export type PlayerStatus = 'PENDING' | 'READY' | 'PLAYING' | 'PAUSED'
+
+// Possible UI actions for keymaps
+export type UIAction = 'ui.toggleSoundcloud' | 'media.playPause'
+
+// KeyMap for hotkeys
+export type KeyMap = {
+  [UIAction]: string
 }

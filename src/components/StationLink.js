@@ -1,7 +1,21 @@
+/* @flow */
 import React from 'react'
 import Link from 'gatsby-link'
 
-export const StationLink = ({ path, title }) => (
+/**
+ * Prop types
+ */
+
+export type Props = {
+  path: string,
+  title: string
+}
+
+/**
+ * A link to a station
+ */
+
+export const StationLink = ({ path, title }: Props) => (
   <Link to={path} className='link'>
     <span className='StationLink'>
       <span className='title'>{title}</span>
@@ -27,5 +41,9 @@ export const StationLink = ({ path, title }) => (
     </span>
   </Link>
 )
+
+/*
+ * Export
+ */
 
 export default StationLink

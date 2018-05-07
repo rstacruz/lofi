@@ -1,4 +1,10 @@
-import React from 'react'
+/* @flow */
+import * as React from 'react'
+
+export type Props = {|
+  title: string,
+  children?: React.Node
+|}
 
 /**
  * Headings for a storybook.
@@ -6,7 +12,7 @@ import React from 'react'
  * @param {ReactNode} [children] Kids to render
  */
 
-const StoryHeading = ({ title, children }) => (
+const StoryHeading = ({ title, children }: Props) => (
   <div className='StoryHeading'>
     <h2 className='title'>{title}</h2>
     {children || null}

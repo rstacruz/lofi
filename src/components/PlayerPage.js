@@ -13,25 +13,23 @@ import MediaControls from '../components/MediaControls'
 import PlayerHotkeys from '../components/PlayerHotkeys'
 import StationLinks from '../components/StationLinks'
 
-/*::
-  import type { StationPage } from '../types'
+import type { StationPage } from '../types'
 
-  export type ViewProps = {
-    showSlideshow: boolean,
-    showSoundcloud: boolean,
-    soundcloudURL: string,
-    dispatch: any,
-    actions: any,
-    stations: Array<StationPage>,
-    children: React.Node
-  }
+export type ViewProps = {
+  showSlideshow: boolean,
+  showSoundcloud: boolean,
+  soundcloudURL: string,
+  dispatch: any,
+  actions: any,
+  stations: Array<StationPage>,
+  children: React.Node
+}
 
-  export type Props = {
-    soundcloudURL: string,
-    title: string,
-    stations: Array<StationPage>
-  }
-*/
+export type Props = {
+  soundcloudURL: string,
+  title: string,
+  stations: Array<StationPage>
+}
 
 /**
  * Home page

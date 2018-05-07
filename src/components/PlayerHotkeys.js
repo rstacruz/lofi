@@ -1,14 +1,24 @@
-import React from 'react'
+/* @flow */
+import * as React from 'react'
 import { HotKeys } from 'react-hotkeys'
 import { Subscribe } from 'unstated'
 
 import UIStore from '../stores/UIStore'
+import type { KeyMap } from '../types'
+
+/*
+ * Types
+ */
+
+export type Props = {|
+  children: React.Node
+|}
 
 /**
  * The keymap.
  */
 
-export const map = {
+export const map: KeyMap = {
   'ui.toggleSoundcloud': 'up',
   'media.playPause': 'space'
 }
@@ -24,7 +34,7 @@ export const map = {
  *     </PlayerHotkeys>
  */
 
-export const PlayerHotkeys = ({ children }) => {
+export const PlayerHotkeys = ({ children }: Props) => {
   return (
     <Subscribe to={[UIStore]}>
       {ui => (
