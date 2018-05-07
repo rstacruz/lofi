@@ -1,5 +1,5 @@
 /* @flow */
-import React, { Component } from 'react'
+import * as React from 'react'
 
 import * as IMAGES from '../data/images'
 import GifSlide from '../components/GifSlide'
@@ -26,7 +26,7 @@ export type State = {|
  * Slideshow
  */
 
-export class GifSlideshow extends Component<Props, State> {
+export class GifSlideshow extends React.Component<Props, State> {
   // Timeout for timer
   timer: ?global.TimeoutID
 
@@ -37,6 +37,10 @@ export class GifSlideshow extends Component<Props, State> {
     index: 0,
     visible: true
   }
+
+  /**
+   * Constructor: sets state
+   */
 
   constructor (props: Props) {
     super(props)
@@ -58,7 +62,7 @@ export class GifSlideshow extends Component<Props, State> {
    * Returns the current image.
    */
 
-  getImage () {
+  getImage (): string {
     const { images, index } = this.state
     return images[index]
   }
@@ -67,28 +71,45 @@ export class GifSlideshow extends Component<Props, State> {
    * Returns the images to be preloaded.
    */
 
-  getPreload () {
+  getPreload (): Array<string> {
     const { images, index } = this.state
     return [...images, ...images].slice(index + 1, index + 2)
   }
 
-  nextImage () {
+  /**
+   * Moves to the next image.
+   * Updates state.
+   */
+
+  nextImage (): void {
     let { index, images } = this.state
     index += 1
     if (index >= images.length) index = 0
     this.setState({ index })
   }
 
-  componentDidMount () {
+  /**
+   * On mount: start the timer.
+   */
+
+  componentDidMount (): void {
     this.tick()
   }
 
-  componentWillUnmount () {
+  /**
+   * On unmount: stop the timer.
+   */
+
+  componentWillUnmount (): void {
     if (this.timer) clearTimeout(this.timer)
     this.timer = undefined
   }
 
-  tick () {
+  /**
+   * Starts the timer.
+   */
+
+  tick (): void {
     const { interval } = this.state
 
     this.timer = setTimeout(() => {
@@ -97,7 +118,11 @@ export class GifSlideshow extends Component<Props, State> {
     }, interval)
   }
 
-  render () {
+  /**
+   * Renders by delegating to `<GifSlide />`.
+   */
+
+  render (): React.Node {
     const image = this.getImage()
     const preload = this.getPreload()
     const { visible } = this.props
@@ -112,8 +137,9 @@ export class GifSlideshow extends Component<Props, State> {
  * @param {Array<*>} array Array to be sorted
  */
 
-function shuffle (array, n) {
+function shuffle (array: Array<*>, n?: number): Array<*> {
   if (n === 0) return array
+
   return shuffle(
     array.sort(() => Math.random() - 0.5),
     typeof n === 'undefined' ? array.length : n - 1
