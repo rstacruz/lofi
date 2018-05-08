@@ -2,14 +2,14 @@
 
 export type StationGroup = 'lofi' | 'electronic'
 
-export type Station = {|
+export type Station = {
   default?: boolean,
   title: string,
   group: StationGroup,
   genre: ?string,
   href: string,
   soundcloudURL: string
-|}
+}
 
 export type StationList = {
   [string]: Station

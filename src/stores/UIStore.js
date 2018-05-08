@@ -1,15 +1,20 @@
+/* @flow */
 import { Container } from 'unstated'
+
+export type State = {
+  showSoundcloud: boolean
+}
 
 /**
  * Store that has UI state
  */
 
-export default class UIStore extends Container {
+export default class UIStore extends Container<State> {
   state = {
     showSoundcloud: false
   }
 
-  setSoundcloud (value) {
+  setSoundcloud (value: boolean) {
     this.setState({ showSoundcloud: value })
   }
 

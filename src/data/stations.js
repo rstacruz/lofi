@@ -1,14 +1,12 @@
 /* @flow */
 
-/*::
-  import type { StationList } from '../types'
-*/
+import type { StationList } from '../types'
 
 /**
  * Stations
  */
 
-const STATIONS /*: StationList */ = {
+const STATIONS: StationList = {
   '/lofi-hiphop': {
     title: 'Lofi Beats',
     genre: 'Hiphop',
