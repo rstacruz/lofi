@@ -180,7 +180,27 @@ export const africa: Array<string> = [
 
   // Elephant
   // http://gph.is/1EhY1sf
-  'https://media.giphy.com/media/xy2x91aDutdQs/giphy.gif'
+  'https://media.giphy.com/media/xy2x91aDutdQs/giphy.gif',
+
+  // Lion cubs
+  // http://gph.is/17gLyGL
+  'https://media.giphy.com/media/vKxtitjlIDBWU/giphy.gif',
+
+  // Elephant converse
+  // http://gph.is/1Lm5GZI
+  'https://media.giphy.com/media/SWKyABQ08mbXW/giphy.gif',
+
+  // Elephant and a dude
+  // http://gph.is/2w8czBh
+  'https://media.giphy.com/media/nV8wNDUcQX8Lm/giphy.gif',
+
+  // Running zebra
+  // http://gph.is/15NRbLk
+  'https://media.giphy.com/media/8LsOY7dirIH28/giphy.gif',
+
+  // Dope zebra
+  // http://gph.is/19ZQnmP
+  'https://media.giphy.com/media/bHoFqabfGJLpu/giphy.gif'
 ]
 
 /**
