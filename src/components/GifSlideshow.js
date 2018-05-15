@@ -3,6 +3,7 @@ import * as React from 'react'
 
 import * as IMAGES from '../data/images'
 import GifSlide from '../components/GifSlide'
+import type { Imageset } from '../types'
 
 /*
  * Types
@@ -12,7 +13,7 @@ export type Props = {|
   interval: number,
   images: ?Array<string>,
   index: number,
-  imageset: ?string,
+  imageset?: Imageset,
   visible: boolean
 |}
 

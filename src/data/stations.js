@@ -1,15 +1,18 @@
 /* @flow */
-import type { StationList } from '../types'
+/*::
+  import type { StationList } from '../types'
+*/
 
 /**
  * Stations
  */
 
-const STATIONS: StationList = {
+const STATIONS /*: StationList */ = {
   '/lofi-hiphop': {
     title: 'Lofi Beats',
     genre: 'Hiphop',
     group: 'lofi',
+    imageset: 'aesthetic',
     href: 'https://soundcloud.com/parzival6/sets/lo-fi-hip-hop',
     soundcloudURL: 'https://api.soundcloud.com/playlists/246258956'
   },
@@ -17,6 +20,7 @@ const STATIONS: StationList = {
     title: 'Future Funk',
     genre: 'Funk',
     group: 'lofi',
+    imageset: 'aesthetic',
     href: 'https://soundcloud.com/seki13/sets/vaporwave-future-funk',
     soundcloudURL: 'https://api.soundcloud.com/playlists/248817284'
   },
@@ -24,6 +28,7 @@ const STATIONS: StationList = {
     title: 'VHS Dreams',
     genre: 'Synthpop',
     group: 'lofi',
+    imageset: 'aesthetic',
     href: 'https://soundcloud.com/user-231461939/sets/kaimyros-vaporwave-mix',
     soundcloudURL: 'https://api.soundcloud.com/playlists/335930552'
   },
@@ -31,9 +36,18 @@ const STATIONS: StationList = {
     title: 'Morning Bliss',
     genre: 'Indie',
     group: 'electronic',
+    imageset: 'lofi',
     href:
       'https://soundcloud.com/user-876658341/sets/sunday-morning-kisses-and',
     soundcloudURL: 'https://api.soundcloud.com/playlists/424032182'
+  },
+  '/i-bless-the-rains': {
+    title: 'Africa',
+    genre: 'Misc',
+    group: 'misc',
+    imageset: 'africa',
+    soundcloudURL: 'https://soundcloud.com/clemenswenners/africa',
+    href: 'https://api.soundcloud.com/tracks/151129490'
   }
   // '/timewriter': {
   //   title: 'Lazy Sundays',

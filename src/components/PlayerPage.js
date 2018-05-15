@@ -13,7 +13,7 @@ import MediaControls from '../components/MediaControls'
 import PlayerHotkeys from '../components/PlayerHotkeys'
 import StationLinks from '../components/StationLinks'
 
-import type { StationPage } from '../types'
+import type { StationPage, Imageset } from '../types'
 
 export type ViewProps = {
   showSlideshow: boolean,
@@ -22,12 +22,18 @@ export type ViewProps = {
   dispatch: any,
   actions: any,
   stations: Array<StationPage>,
-  children: React.Node
+
+  // React nodes to render inside (eg, Helmet)
+  children: React.Node,
+
+  // The images to be used in `<GifSlideshow />`
+  imageset?: string
 }
 
 export type Props = {
   soundcloudURL: string,
   title: string,
+  imageset?: string,
   stations: Array<StationPage>
 }
 
@@ -43,6 +49,7 @@ export const PlayerPageView = (
     dispatch,
     actions,
     stations,
+    imageset,
     children
   } /*: ViewProps */
 ) => (
@@ -57,7 +64,7 @@ export const PlayerPageView = (
 
       {showSlideshow ? (
         <div className='slideshow'>
-          <GifSlideshow />
+          <GifSlideshow imageset={imageset} />
         </div>
       ) : null}
 
@@ -133,7 +140,9 @@ export const PlayerPageView = (
  * Connected `<PlayerPageView />`
  */
 
-export const PlayerPage = ({ soundcloudURL, title, stations } /*: Props */) => (
+export const PlayerPage = (
+  { soundcloudURL, title, imageset, stations } /*: Props */
+) => (
   <Subscribe to={[SoundcloudStore, UIStore]}>
     {(soundcloud, ui) => (
       <PlayerPageView
@@ -146,6 +155,7 @@ export const PlayerPage = ({ soundcloudURL, title, stations } /*: Props */) => (
         dispatch={soundcloud}
         actions={soundcloud.state.actions}
         stations={stations}
+        imageset={imageset}
       >
         <Helmet title={title} />
       </PlayerPageView>

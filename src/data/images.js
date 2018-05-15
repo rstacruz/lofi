@@ -164,3 +164,27 @@ export const aesthetic: Array<string> = [
   // http://gph.is/1Zd9h3F
   'https://media.giphy.com/media/yHWnaQf2q68sE/giphy.gif'
 ]
+
+/**
+ * I bless the rains down in Africa
+ */
+
+export const africa: Array<string> = [
+  // Gazelles
+  // http://gph.is/1qJy4ft
+  'https://media.giphy.com/media/8fu6uGQYeAkms/giphy.gif',
+
+  // Lions
+  // http://gph.is/1cN8VM4
+  'https://media.giphy.com/media/4UrZOtu7RadvG/giphy.gif',
+
+  // Elephant
+  // http://gph.is/1EhY1sf
+  'https://media.giphy.com/media/xy2x91aDutdQs/giphy.gif'
+]
+
+/**
+ * All images
+ */
+
+export const IMAGES = { lofi, africa, aesthetic }

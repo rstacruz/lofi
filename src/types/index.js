@@ -59,3 +59,5 @@ export type UIAction = 'ui.toggleSoundcloud' | 'media.playPause'
 export type KeyMap = {
   [UIAction]: string
 }
+
+export type Imageset = 'lofi' | 'aesthetic' | 'africa'
