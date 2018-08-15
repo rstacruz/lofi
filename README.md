@@ -1,8 +1,8 @@
-<p align='center'><br><img src='https://user-images.githubusercontent.com/74385/44137352-b8f220c0-a0a2-11e8-9cfb-68116e95322e.png' width='500'><br></p>
+<p align='center'><br><img src='https://user-images.githubusercontent.com/74385/44137352-b8f220c0-a0a2-11e8-9cfb-68116e95322e.png' width='500'><br><strong><a href='https://ricostacruz.com/lofi'>ricostacruz.com/lofi</a></strong></p>
 
 # lofi
 
-> :vhs: VHS music machine from the 80's - https://ricostacruz.com/lofi
+> :vhs: VHS music machine from the 80's
 
 This is a quick exploration of tying together a few libraries which, at around 2018, ~~were~~ are considered cutting-edge:
 
